@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Checks, PageHead, PhotoCta } from "@/components/Blocks";
+import { Checks, ContactCard, PageHead } from "@/components/Blocks";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -25,19 +25,19 @@ export default function NewPatients() {
         <div className="wrap cards four">
           {STEPS.map(([t, d], i) => (
             <div key={t} className="card">
-              <p className="kicker" style={{ marginBottom: 6 }}>Step {i + 1}</p>
+              <div className="step-num">{i + 1}</div>
               <h3>{t}</h3>
               <p>{d}</p>
             </div>
           ))}
         </div>
       </section>
-      <section className="section">
+      <section className="section soft">
         <div className="wrap row">
           <Image src="/img/therapy-shoulder.jpg" alt="A therapist examining a patient's shoulder" width={1024} height={935} />
           <div>
             <h2>What Your Evaluation Covers</h2>
-            <p className="sub">Your first visit</p>
+            <p className="kicker">Your first visit</p>
             <Checks
               items={[
                 "Your history, to understand how and when the problem started",
@@ -60,11 +60,11 @@ export default function NewPatients() {
           <div className="card">
             <h3>Insurance</h3>
             <p>We&apos;re a provider for most insurance plans, including Medicare, and we accept worker&apos;s comp and auto accident claims.</p>
-            <Link href="/insurance" className="btn line">Insurance & Billing</Link>
+            <Link href="/insurance" className="btn ghost">Insurance & Billing</Link>
           </div>
         </div>
       </section>
-      <PhotoCta />
+      <ContactCard />
     </>
   );
 }

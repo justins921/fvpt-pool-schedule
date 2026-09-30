@@ -14,15 +14,18 @@ export default function Blog() {
   return (
     <>
       <PageHead title="Blog" text="Guides and tips from our therapists." />
-      <section className="section">
-        <div className="wrap tiles">
+      <section className="section soft">
+        <div className="wrap svc-grid">
           {getPosts().map((p) => (
-            <Link key={p.slug} href={`/blog/${p.slug}`} className="tile">
-              {p.image && <Image src={p.image} alt="" width={560} height={350} />}
-              <p className="date" style={{ margin: "0 0 6px" }}>{formatDate(p.date)}</p>
-              <h2 style={{ fontSize: "1.35rem", margin: 0 }}>{p.title}</h2>
-              <p>{p.description}</p>
-            </Link>
+            <div key={p.slug} className="svc">
+              <Image src={p.image ?? "/img/therapy-1.jpg"} alt="" width={560} height={350} />
+              <div className="body">
+                <p className="date" style={{ margin: "0 0 4px" }}>{formatDate(p.date)}</p>
+                <h2 style={{ fontSize: "1.08rem", marginBottom: 6 }}>{p.title}</h2>
+                <p>{p.description}</p>
+                <Link href={`/blog/${p.slug}`} className="btn ghost">Read Post</Link>
+              </div>
+            </div>
           ))}
         </div>
       </section>

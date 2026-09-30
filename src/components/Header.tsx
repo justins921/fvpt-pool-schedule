@@ -17,7 +17,7 @@ export default function Header() {
     <header className="header">
       <div className="wrap">
         <Link href="/" className="logo" aria-label={`${SITE.shortName} home`}>
-          <Image src="/img/logo.png" alt="" width={48} height={48} priority />
+          <Image src="/img/logo.png" alt="" width={44} height={44} priority />
           <span>
             <strong>Fox Valley Physical Therapy</strong>
             <small>& Wellness Clinic</small>
@@ -46,7 +46,7 @@ export default function Header() {
           )}
         </nav>
         <a href={SITE.phoneHref} className="btn">
-          Call Us {SITE.phone.replace(/[()]/g, "").replace(" ", "-")}
+          <Icon name="phone" className="icon-sm" /> {SITE.phone}
         </a>
         <button className="menu-btn" aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>
           <Icon name={open ? "close" : "menu"} className="icon-lg" />

@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CallBox, Checks, PhotoCta } from "@/components/Blocks";
+import { ContactCard, Faq, HoursTable, PhonePill, faqSchema } from "@/components/Blocks";
 import Icon from "@/components/Icon";
 import { FAQ } from "@/content/faq";
 import { SERVICES } from "@/content/services";
 import { POOL, SITE } from "@/content/site";
+import { TEAM } from "@/content/team";
 
 const AFFILIATIONS = [
   { src: "/img/affiliations/apta.svg", alt: "American Physical Therapy Association" },
@@ -14,74 +15,82 @@ const AFFILIATIONS = [
   { src: "/img/affiliations/oshkosh-chamber.png", alt: "Oshkosh Chamber of Commerce" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
+const BENEFITS = [
+  { icon: "user", title: "One-On-One, Every Visit", text: "At every appointment you get hands-on, one-on-one attention from your therapist." },
+  { icon: "clipboard", title: "No Referral Needed", text: "Call and schedule directly. Our office will try to check your insurance benefits for you." },
+  { icon: "water", title: "The Only Therapeutic Pool In Oshkosh", text: "Aquatic therapy for arthritis, joint replacements, balance and pain, right here in the clinic." },
+  { icon: "talk", title: "We Talk To Your Doctor", text: "We keep your physician in the loop and call them if your plan needs to change." },
+];
 
 export default function Home() {
-  const tiles = SERVICES.filter((s) => s.slug !== "wellness").slice(0, 9);
+  const services = SERVICES.filter((s) => s.slug !== "wellness").slice(0, 9);
 
   return (
     <>
       <section className="hero">
         <div className="wrap">
           <div>
-            <p className="kicker">Voted top private practice in Winnebago County</p>
-            <h1>
-              One-On-One Physical Therapy In <mark>Oshkosh</mark> Since 1990
-            </h1>
-            <ul className="ticks">
-              <li><Icon name="tick" /> No Referral Needed</li>
-              <li><Icon name="tick" /> Locally Owned & Operated</li>
-              <li><Icon name="tick" /> Most Insurance Accepted, Including Medicare</li>
-            </ul>
-            <CallBox />
+            <p className="kicker">Physical therapy in Oshkosh, WI</p>
+            <h1>Your Therapist. One-On-One. Every Visit.</h1>
+            <p className="lede">
+              Locally owned since 1990, with the only therapeutic pool in Oshkosh. No referral needed, and we take most insurance, including Medicare.
+            </p>
+            <div className="btn-row" style={{ gap: 22 }}>
+              <PhonePill />
+              <a href={SITE.intakeForm} className="forms-link">Download Intake Form <Icon name="external" className="icon-sm" /></a>
+            </div>
           </div>
           <div className="hero-photo">
             <Image src="/img/staff-group.jpg" alt="The Fox Valley Physical Therapy team outside the clinic" width={720} height={480} priority />
-            <div className="hero-tag">
-              <b>35k+</b>
-              <span>new patients treated in Oshkosh and the Fox Valley</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section tight">
-        <div className="wrap">
-          <div className="banner">
-            <div className="seal">
+            <div className="name-card">
+              <Image src="/img/logo.png" alt="" width={40} height={40} />
               <div>
-                <span>Since</span>
-                <b>1990</b>
+                <b>Steve & Regina Sobojinski</b>
+                <span>Founders, treating patients since 1990</span>
               </div>
             </div>
-            <div>
-              <p className="over">The only therapeutic pool in Oshkosh</p>
-              <h2>
-                Hands-On Care From Your Therapist, <em>Every Single Visit.</em>
-              </h2>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="info-strip">
         <div className="wrap">
-          <div className="intro">
-            <h2>Physical Therapy You Can Trust</h2>
+          <div>
+            <h3>Contact Us</h3>
             <p>
-              Fox Valley Physical Therapy & Wellness Clinic is a locally owned clinic on S Washburn Street in Oshkosh. We&apos;ve grown from a 500 square foot office into a 7,500 square foot clinic with a therapeutic pool and a fully equipped gym. Every patient gets one-on-one attention and a plan built for them.
+              Ph: <a href={SITE.phoneHref}>{SITE.phone}</a>
+              <br />Fax: {SITE.fax}
+              <br />Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             </p>
           </div>
-          <div className="tiles">
-            {tiles.map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}`} className="tile">
+          <div>
+            <h3>Our Oshkosh Clinic</h3>
+            <p>{SITE.address.street},<br />{SITE.address.city}, {SITE.address.state} {SITE.address.zip}</p>
+            <a href={SITE.mapsUrl} className="pill-link">Get Directions</a>
+          </div>
+          <div>
+            <h3>Clinic Hours</h3>
+            <HoursTable />
+          </div>
+        </div>
+      </section>
+
+      <section className="section soft">
+        <div className="wrap">
+          <div className="intro">
+            <p className="kicker">One-on-one physical therapy</p>
+            <h2>Oshkosh Physical Therapy Services</h2>
+          </div>
+          <div className="svc-grid">
+            {services.map((s) => (
+              <div key={s.slug} className="svc">
                 <Image src={s.image} alt="" width={560} height={350} />
-                <h3>{s.name}</h3>
-              </Link>
+                <div className="body">
+                  <h3>{s.name}</h3>
+                  <p>{s.short}</p>
+                  <Link href={`/services/${s.slug}`} className="btn">Learn More</Link>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -89,105 +98,120 @@ export default function Home() {
 
       <section className="section">
         <div className="wrap">
-          <div className="row">
-            <Image src="/img/team/steve.png" alt="Steve Sobojinski, OTR, CSCS, co-founder" width={480} height={480} style={{ maxWidth: 400, aspectRatio: "1", justifySelf: "center" }} />
-            <div>
-              <h2>Why Choose Fox Valley Physical Therapy?</h2>
-              <p className="sub">Family-Owned in Oshkosh Since 1990</p>
-              <p>
-                Steve Sobojinski, OTR, CSCS, and Regina Sobojinski, PT, started Fox Valley Physical Therapy in 1990 with office manager Patti Ahrens. More than 30 years later, Steve and Regina are still treating patients, alongside a team with over 100 years of combined experience.
-              </p>
-              <p>
-                &quot;I treat their injuries as if they were my injuries.&quot; That&apos;s how Steve puts it, and it&apos;s how the whole clinic works. At every appointment you get hands-on, one-on-one attention from your therapist. We find what&apos;s causing the problem, treat it, and teach you how to keep it from coming back.
-              </p>
-              <Link href="/team" className="btn line">Meet Our Team</Link>
-            </div>
+          <div className="two-col">
+            <h2>A Better Approach To Physical Therapy</h2>
+            <p>
+              Fox Valley Physical Therapy & Wellness Clinic started in a 500 square foot office in 1990. Today it&apos;s a 7,500 square foot clinic with a therapeutic pool and a fully equipped gym, and a team with more than 100 years of combined experience. What hasn&apos;t changed is how we treat people.
+            </p>
           </div>
-          <div className="row flip">
-            <Image src="/img/patient-treated.jpg" alt="A therapist working with a patient in the clinic gym" width={980} height={360} />
-            <div>
-              <h3 style={{ fontSize: "1.9rem" }}>We Talk To Your Doctor, So You Don&apos;t Have To</h3>
-              <p>
-                We work closely with area physicians, chiropractors, nurse practitioners, podiatrists, dentists, athletic trainers and insurance companies. If you&apos;re not progressing the way you should, your therapist calls your referral source to decide on next steps, whether that&apos;s more testing, a change in plan, or discharge. It saves you time and money.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section white">
-        <div className="wrap">
-          <div className="row">
-            <div>
-              <h2>The Only Therapeutic Pool In Oshkosh</h2>
-              <p className="sub">Aquatic Therapy & Pool Access</p>
-              <p>
-                Warm water takes weight off healing joints, so you can start moving and strengthening sooner and with less pain. It&apos;s a great fit for arthritis, rehab after surgery or joint replacement, balance problems and chronic back pain.
-              </p>
-              <p>
-                Finished with therapy? Current and former patients can reserve the pool on their own for {POOL.monthlyPrice} a month.
-              </p>
-              <div className="btn-row">
-                <Link href="/services/aquatic-therapy" className="btn">Aquatic Therapy</Link>
-                <Link href="/pool" className="btn line">Pool Access</Link>
+          <div className="approach">
+            <div className="photo">
+              <Image src="/img/team/steve.png" alt="Steve Sobojinski, OTR, CSCS" width={480} height={480} />
+              <div className="name-card">
+                <Image src="/img/logo.png" alt="" width={40} height={40} />
+                <div>
+                  <b>Steve Sobojinski, OTR, CSCS</b>
+                  <span>&quot;I treat their injuries as if they were my injuries.&quot;</span>
+                </div>
               </div>
             </div>
-            <Image src="/img/pool.jpg" alt="The therapeutic pool at Fox Valley Physical Therapy" width={980} height={360} />
+            <ul className="benefits">
+              {BENEFITS.map((b) => (
+                <li key={b.title}>
+                  <span className="ico"><Icon name={b.icon} /></span>
+                  <div>
+                    <h3>{b.title}</h3>
+                    <p>{b.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      <PhotoCta />
-
-      <section className="section">
+      <section className="section soft">
         <div className="wrap">
-          <div className="row top">
-            <div>
-              <h2>Your Physical Therapy Clinic In Oshkosh</h2>
-              <p className="sub">Serving Oshkosh and the Fox Valley since 1990</p>
-              <p>
-                We treat neck and back pain, shoulder, knee, hip and ankle injuries, hand and wrist injuries, headaches, TMJ, vertigo, arthritis and fibromyalgia, and we handle rehab after surgery and joint replacement. Our team includes physical therapists, an occupational therapist who specializes in the shoulder and hand, physical therapist assistants and a licensed athletic trainer.
-              </p>
-              <Checks items={["Free parking right out front", "Most insurance accepted, including Medicare", "Worker's comp and auto accident claims", "Private pay options and HSA/FSA"]} />
-              <p>
-                <strong>{SITE.address.street}, {SITE.address.city}, {SITE.address.state} {SITE.address.zip}</strong>
-                <br />
-                <a href={SITE.mapsUrl}>Get directions</a>
-              </p>
-            </div>
-            <iframe className="map" src={SITE.mapsEmbed} title="Map to Fox Valley Physical Therapy" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+          <div className="intro">
+            <p className="kicker">Our therapists</p>
+            <h2>Get To Know Our Team</h2>
+            <p>Physical therapists, an occupational therapist, physical therapist assistants and a licensed athletic trainer, many of them from right here in the Fox Valley.</p>
+          </div>
+          <div className="people">
+            {TEAM.slice(0, 8).map((m) => (
+              <Link key={m.slug} href={`/team#${m.slug}`} className="person">
+                <Image src={m.photo} alt={m.name} width={320} height={320} />
+                <div>
+                  <h3>{m.name}</h3>
+                  <p>{m.role}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="center" style={{ marginTop: 32 }}>
+            <Link href="/team" className="btn ghost">Meet The Whole Team</Link>
           </div>
         </div>
       </section>
 
       <section className="section">
+        <div className="wrap row">
+          <div>
+            <p className="kicker">Aquatic therapy & pool access</p>
+            <h2>The Only Therapeutic Pool In Oshkosh</h2>
+            <p>
+              Warm water takes weight off healing joints, so you can start moving and strengthening sooner and with less pain. It&apos;s a great fit for arthritis, rehab after surgery or joint replacement, balance problems and chronic back pain.
+            </p>
+            <p>Finished with therapy? Current and former patients can reserve the pool on their own for {POOL.monthlyPrice} a month.</p>
+            <div className="btn-row">
+              <Link href="/services/aquatic-therapy" className="btn">Aquatic Therapy</Link>
+              <Link href="/pool" className="btn ghost">Pool Access</Link>
+            </div>
+          </div>
+          <Image src="/img/pool.jpg" alt="The therapeutic pool at Fox Valley Physical Therapy" width={980} height={360} />
+        </div>
+      </section>
+
+      <section className="section soft">
         <div className="wrap">
           <div className="intro">
             <h2>Frequently Asked Questions</h2>
           </div>
-          <div className="faq">
-            {FAQ.map((f) => (
-              <div key={f.q} className="card">
-                <h3>{f.q}</h3>
-                <p>{f.a}</p>
-              </div>
-            ))}
-          </div>
+          <Faq items={FAQ} />
         </div>
       </section>
 
-      <section className="section white">
-        <div className="wrap">
-          <div className="logos">
-            {AFFILIATIONS.map((a) => (
-              <div key={a.src}>
-                <Image src={a.src} alt={a.alt} width={160} height={54} unoptimized={a.src.endsWith(".svg")} />
-              </div>
-            ))}
+      <section className="section">
+        <div className="wrap row top">
+          <div>
+            <h2>Visit Us At Our Oshkosh Location</h2>
+            <p>Free parking right out front on S Washburn Street. Download the intake form ahead of time to save a few minutes at check-in.</p>
+            <div className="info-strip" style={{ border: 0, background: "none" }}>
+              <h3>Contact Us</h3>
+              <p style={{ marginBottom: 16 }}>Ph: <a href={SITE.phoneHref}>{SITE.phone}</a><br />Fax: {SITE.fax}<br />Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+              <h3>Oshkosh Clinic Address</h3>
+              <p>{SITE.address.street},<br />{SITE.address.city}, {SITE.address.state} {SITE.address.zip}</p>
+              <a href={SITE.mapsUrl} className="pill-link" style={{ marginBottom: 18 }}>Get Directions</a>
+              <h3>Services</h3>
+              <ul className="tags">
+                {SERVICES.map((s) => <li key={s.slug}><Link href={`/services/${s.slug}`}>{s.name}</Link></li>)}
+              </ul>
+            </div>
           </div>
+          <iframe className="map" style={{ minHeight: 460 }} src={SITE.mapsEmbed} title="Map to Fox Valley Physical Therapy" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>
       </section>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      <ContactCard />
+
+      <section className="section soft" style={{ paddingTop: 48, paddingBottom: 48 }}>
+        <div className="wrap logos">
+          {AFFILIATIONS.map((a) => (
+            <div key={a.src}><Image src={a.src} alt={a.alt} width={160} height={52} unoptimized={a.src.endsWith(".svg")} /></div>
+          ))}
+        </div>
+      </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(FAQ)) }} />
     </>
   );
 }

@@ -7,6 +7,7 @@ export type Service = {
   intro: string;
   sections: { heading: string; body?: string; list?: string[] }[];
   related?: string[];
+  faq?: { q: string; a: string }[];
 };
 
 // Everything here comes from the clinic's existing website and staff bios.
@@ -89,6 +90,10 @@ export const SERVICES: Service[] = [
         body: "Current and former patients can also book the pool for independent exercise. See the Pool page for how it works.",
       },
     ],
+    faq: [
+      { q: "Do I need to know how to swim?", a: "No. Aquatic therapy is exercise in the water, not swimming laps, and your therapist is with you the whole time." },
+      { q: "Can I keep using the pool after therapy ends?", a: "Yes. Current and former patients can reserve the pool for independent exercise. See the Pool page for details." },
+    ],
     related: ["physical-therapy", "vertigo-balance-concussion"],
   },
   {
@@ -133,6 +138,10 @@ export const SERVICES: Service[] = [
         heading: "Who does it",
         body: "Dr. Stephanie Meyer, DPT, is a Certified Myofascial Trigger Point Therapist, trained through Myopain Seminars. Dry needling is always part of a full treatment plan, not a stand-alone fix.",
       },
+    ],
+    faq: [
+      { q: "What does \"dry\" mean in dry needling?", a: "It means no medication or injection goes in. The needle itself does the work on the trigger point." },
+      { q: "Who performs dry needling at Fox Valley PT?", a: "Dr. Stephanie Meyer, DPT, a Certified Myofascial Trigger Point Therapist trained through Myopain Seminars." },
     ],
     related: ["physical-therapy", "tmj"],
   },
@@ -179,6 +188,9 @@ export const SERVICES: Service[] = [
           "Balance training and fall prevention",
         ],
       },
+    ],
+    faq: [
+      { q: "What is BPPV?", a: "Benign Paroxysmal Positional Vertigo. Tiny calcium crystals in the inner ear get knocked out of place and cause spinning when you move your head. Repositioning maneuvers like the Epley maneuver move them back." },
     ],
     related: ["physical-therapy", "pediatrics"],
   },

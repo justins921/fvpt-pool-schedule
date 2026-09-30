@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { PageHead, PhotoCta } from "@/components/Blocks";
+import { ContactCard, PageHead } from "@/components/Blocks";
 import { TEAM } from "@/content/team";
 
 export const metadata: Metadata = {
@@ -16,25 +16,27 @@ export default function Team() {
         title="Our Team, Our Family"
         text="Therapy isn't just our profession, it's our passion. Our clinical team has more than 100 years of combined experience, and our office staff can answer any billing, insurance or scheduling question."
       />
-      <section className="section">
+      <section className="section soft">
         <div className="wrap people">
           {TEAM.map((m) => (
             <a key={m.slug} href={`#${m.slug}`} className="person">
               <Image src={m.photo} alt={m.name} width={320} height={320} />
-              <h2 style={{ fontSize: "1.25rem", margin: 0 }}>{m.name}</h2>
-              <p>{[m.credentials, m.role].filter(Boolean).join(", ")}</p>
+              <div>
+                <h2 style={{ fontSize: ".98rem", margin: 0 }}>{m.name}</h2>
+                <p>{[m.credentials, m.role].filter(Boolean).join(", ")}</p>
+              </div>
             </a>
           ))}
         </div>
       </section>
-      <section className="section white">
+      <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
           {TEAM.map((m) => (
             <article key={m.slug} id={m.slug} className="bio">
               <Image src={m.photo} alt="" width={440} height={440} />
               <div>
                 <h2>{m.name}{m.credentials && `, ${m.credentials}`}</h2>
-                <p className="sub" style={{ margin: "4px 0 14px" }}>{m.role}</p>
+                <p className="role">{m.role}</p>
                 <p>{m.about}</p>
                 <dl>
                   {m.education && (
@@ -61,7 +63,7 @@ export default function Team() {
           ))}
         </div>
       </section>
-      <PhotoCta />
+      <ContactCard />
     </>
   );
 }

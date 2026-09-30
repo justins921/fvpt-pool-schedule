@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CallBox, HoursTable, PageHead } from "@/components/Blocks";
+import { HoursTable, PageHead, PhonePill } from "@/components/Blocks";
 import Icon from "@/components/Icon";
 import { SITE } from "@/content/site";
 
@@ -24,9 +24,9 @@ export default function Contact() {
             </ul>
             <div className="card" style={{ marginBottom: 24 }}>
               <h3>Hours</h3>
-              <HoursTable />
+              <HoursTable lined />
             </div>
-            <CallBox />
+            <PhonePill />
           </div>
           <iframe className="map" style={{ minHeight: 520 }} src={SITE.mapsEmbed} title="Map to Fox Valley Physical Therapy" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>

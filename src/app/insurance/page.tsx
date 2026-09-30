@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Checks, PageHead, PhotoCta } from "@/components/Blocks";
+import { Checks, ContactCard, PageHead } from "@/components/Blocks";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function Insurance() {
           </div>
         </div>
       </section>
-      <section className="section">
+      <section className="section soft">
         <div className="wrap cards">
           <div className="card">
             <h3>Worker&apos;s Comp & Auto Accidents</h3>
@@ -49,7 +49,7 @@ export default function Insurance() {
           </div>
         </div>
       </section>
-      <section className="section white">
+      <section className="section">
         <div className="wrap prose">
           <h2 style={{ marginTop: 0 }}>Checking Your Benefits</h2>
           <p>As a service to our patients, we try to contact your insurance to find out your physical therapy benefits. In the end, you&apos;re responsible for confirming your benefits and in-network status with your insurance company.</p>
@@ -57,7 +57,7 @@ export default function Insurance() {
           <p>Questions? Our office staff is happy to help. Call <a href={SITE.phoneHref}>{SITE.phone}</a>.</p>
         </div>
       </section>
-      <PhotoCta />
+      <ContactCard />
     </>
   );
 }

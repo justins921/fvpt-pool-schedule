@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CallBox, Checks, PageHead } from "@/components/Blocks";
+import { Checks, PhonePill, PhotoHero } from "@/components/Blocks";
 import { POOL, SITE } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -13,16 +13,17 @@ export const metadata: Metadata = {
 export default function Pool() {
   return (
     <>
-      <PageHead
+      <PhotoHero
         title="Pool Access For Patients"
         text="Keep up your progress in the only therapeutic pool in Oshkosh. Current and former patients can reserve the pool for their own exercise."
+        image="/img/pool.jpg"
       />
       <section className="section">
         <div className="wrap">
           <div className="row">
             <div>
               <h2>Your Own Hour In The Pool</h2>
-              <p className="sub">{POOL.monthlyPrice} a month, {POOL.visitsPerWeek} visits a week</p>
+              <p className="kicker">{POOL.monthlyPrice} a month · {POOL.visitsPerWeek} visits a week</p>
               <p>The pool is reserved for one person at a time, so the hour is yours. Most people book a month at a time.</p>
               <Checks
                 items={[
@@ -35,14 +36,14 @@ export default function Pool() {
               {POOL.bookingUrl ? (
                 <a href={POOL.bookingUrl} className="btn">Book Pool Time Online</a>
               ) : (
-                <CallBox label="Book Pool Time" note="Call the front desk" />
+                <PhonePill label="Call to book pool time" />
               )}
             </div>
             <Image src="/img/pool.jpg" alt="The therapeutic pool" width={980} height={360} />
           </div>
         </div>
       </section>
-      <section className="section">
+      <section className="section soft">
         <div className="wrap cards">
           <div className="card">
             <h3>What To Bring</h3>
