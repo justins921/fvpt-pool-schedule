@@ -38,13 +38,3 @@ export const POOL = {
 };
 
 export const fullAddress = `${SITE.address.street}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.zip}`;
-
-export const NAV = [
-  { href: "/services", label: "Services" },
-  { href: "/pool", label: "Pool" },
-  { href: "/team", label: "Our Team" },
-  { href: "/new-patients", label: "New Patients" },
-  { href: "/insurance", label: "Insurance" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
-];

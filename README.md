@@ -26,7 +26,7 @@ npm run dev
 
 ## Deploying
 
-Pushes to the production branch deploy on Vercel automatically. Old Webflow URLs (`/our-team`, `/patient-coverage-and-billing`, `/services/tmj-treatment`, etc.) redirect to their new pages in `next.config.ts`, so existing Google rankings carry over. Preview deployments tell search engines not to index them.
+Pushes to the production branch deploy on Vercel automatically. Old Webflow URLs (`/our-team`, `/patient-coverage-and-billing`, `/services/tmj-treatment`, etc.) redirect to their new pages in `next.config.ts`, so existing Google rankings carry over. Search engines are blocked until you set `SITE_LIVE=1` in the Vercel project settings, so do that when the real domain points here.
 
 ## History
 

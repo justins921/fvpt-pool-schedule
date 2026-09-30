@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Privacy Policy", alternates: { canon
 export default function PrivacyPolicy() {
   return (
     <>
-      <PageHead title="Privacy Policy" lead="Last updated: September 17, 2019" />
+      <PageHead title="Privacy Policy" text="Last updated: September 17, 2019" />
       <section className="section">
         <div className="wrap prose">
           <p>Fox Valley Physical Therapy (“us”, “we”, or “our”) operates the Fox Valley Physical Therapy website (the “Service”).</p>

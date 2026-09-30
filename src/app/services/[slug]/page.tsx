@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CallCta, Checks, HoursTable, PageHead } from "@/components/Blocks";
-import Icon from "@/components/Icon";
+import { CallBox, Checks, HoursTable, PageHead, PhotoCta } from "@/components/Blocks";
 import { SERVICES, serviceBySlug } from "@/content/services";
-import { SITE } from "@/content/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,16 +21,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ServicePage({ params }: Props) {
   const s = serviceBySlug((await params).slug);
   if (!s) notFound();
-  const related = (s.related ?? []).map(serviceBySlug).filter(Boolean);
+  const related = (s.related ?? []).map(serviceBySlug).filter((r) => r !== undefined);
 
   return (
     <>
-      <PageHead title={s.name} lead={s.short} crumbs={[{ href: "/services", label: "Services" }]} />
+      <PageHead title={`${s.name} In Oshkosh`} text={s.short} crumbs={[{ href: "/services", label: "Services" }]} />
       <section className="section">
         <div className="wrap detail">
           <div>
-            <Image src={s.image} alt="" width={980} height={560} style={{ borderRadius: 22, marginBottom: 32, aspectRatio: "16 / 9", objectFit: "cover" }} priority />
-            <p className="lead" style={{ marginBottom: 36 }}>{s.intro}</p>
+            <Image className="lead-img" src={s.image} alt="" width={980} height={560} priority />
+            <p style={{ fontSize: "1.1rem" }}>{s.intro}</p>
             {s.sections.map((sec) => (
               <div className="block" key={sec.heading}>
                 <h2>{sec.heading}</h2>
@@ -41,29 +39,27 @@ export default async function ServicePage({ params }: Props) {
               </div>
             ))}
             {s.slug === "aquatic-therapy" && (
-              <Link href="/pool" className="btn btn-primary">Pool access for patients <Icon name="arrow" /></Link>
+              <p style={{ marginTop: 24 }}>
+                <Link href="/pool" className="btn">Pool Access For Patients</Link>
+              </p>
             )}
           </div>
           <aside>
             <div className="card">
-              <h3>Schedule a visit</h3>
+              <h3>Schedule A Visit</h3>
               <p>No referral needed. Call and we&apos;ll find a time that works.</p>
-              <a href={SITE.phoneHref} className="btn btn-primary" style={{ width: "100%" }}>
-                <Icon name="phone" /> {SITE.phone}
-              </a>
+              <CallBox label="Call Now" note="Most insurance accepted" />
             </div>
             <div className="card">
-              <h3>Clinic hours</h3>
+              <h3>Clinic Hours</h3>
               <HoursTable />
             </div>
             {related.length > 0 && (
               <div className="card">
-                <h3>Related services</h3>
-                <ul className="checks" style={{ margin: 0 }}>
+                <h3>Related Services</h3>
+                <ul style={{ margin: 0, paddingLeft: "1.1em" }}>
                   {related.map((r) => (
-                    <li key={r!.slug}>
-                      <Icon name="arrow" /> <Link href={`/services/${r!.slug}`}>{r!.name}</Link>
-                    </li>
+                    <li key={r.slug}><Link href={`/services/${r.slug}`}>{r.name}</Link></li>
                   ))}
                 </ul>
               </div>
@@ -71,7 +67,7 @@ export default async function ServicePage({ params }: Props) {
           </aside>
         </div>
       </section>
-      <CallCta />
+      <PhotoCta />
     </>
   );
 }

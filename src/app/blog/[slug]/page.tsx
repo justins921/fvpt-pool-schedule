@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { CallCta, PageHead } from "@/components/Blocks";
+import { PageHead, PhotoCta } from "@/components/Blocks";
 import { formatDate, getPost, getPosts } from "@/content/blog";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -28,14 +28,14 @@ export default async function PostPage({ params }: Props) {
   return (
     <>
       <PageHead title={p.title} crumbs={[{ href: "/blog", label: "Blog" }]} />
-      <section className="section">
+      <section className="section white">
         <article className="wrap prose">
-          <p className="muted" style={{ color: "var(--muted)" }}>{formatDate(p.date)}</p>
+          <p className="date">{formatDate(p.date)}</p>
           {p.image && <Image src={p.image} alt="" width={980} height={560} style={{ aspectRatio: "16 / 9", objectFit: "cover" }} />}
           <div dangerouslySetInnerHTML={{ __html: p.html }} />
         </article>
       </section>
-      <CallCta />
+      <PhotoCta />
     </>
   );
 }

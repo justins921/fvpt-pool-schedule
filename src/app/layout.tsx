@@ -1,12 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Barlow_Condensed } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { SITE, fullAddress } from "@/content/site";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", weight: ["600"] });
+const barlow = Barlow_Condensed({ subsets: ["latin"], variable: "--font-barlow", weight: ["600", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   icons: { apple: "/apple-touch-icon.png" },
 };
 
-export const viewport: Viewport = { themeColor: "#151b38" };
+export const viewport: Viewport = { themeColor: "#ffffff" };
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -51,8 +50,8 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
-      <body className={inter.className}>
+    <html lang="en" className={barlow.variable}>
+      <body style={{ fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
         <a href="#main" className="skip">
           Skip to content
         </a>

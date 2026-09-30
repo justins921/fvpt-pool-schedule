@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHead } from "@/components/Blocks";
-import Icon from "@/components/Icon";
 import { formatDate, getPosts } from "@/content/blog";
 
 export const metadata: Metadata = {
@@ -12,21 +11,17 @@ export const metadata: Metadata = {
 };
 
 export default function Blog() {
-  const posts = getPosts();
   return (
     <>
-      <PageHead title="Blog" lead="Guides and tips from our therapists." />
+      <PageHead title="Blog" text="Guides and tips from our therapists." />
       <section className="section">
-        <div className="wrap grid grid-3">
-          {posts.map((p) => (
-            <Link key={p.slug} href={`/blog/${p.slug}`} className={`card${p.image ? " card-img" : ""}`}>
-              {p.image && <Image src={p.image} alt="" width={640} height={400} />}
-              <div className={p.image ? "card-body" : undefined}>
-                <small className="eyebrow" style={{ marginBottom: 6 }}>{formatDate(p.date)}</small>
-                <h2 style={{ fontSize: "1.25rem", fontFamily: "inherit", fontWeight: 700 }}>{p.title}</h2>
-                <p>{p.description}</p>
-                <span className="more">Read more <Icon name="arrow" /></span>
-              </div>
+        <div className="wrap tiles">
+          {getPosts().map((p) => (
+            <Link key={p.slug} href={`/blog/${p.slug}`} className="tile">
+              {p.image && <Image src={p.image} alt="" width={560} height={350} />}
+              <p className="date" style={{ margin: "0 0 6px" }}>{formatDate(p.date)}</p>
+              <h2 style={{ fontSize: "1.35rem", margin: 0 }}>{p.title}</h2>
+              <p>{p.description}</p>
             </Link>
           ))}
         </div>
