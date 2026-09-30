@@ -45,7 +45,7 @@ export function ReviewsSection() {
           {REVIEWS.map((r, i) => (
             <figure key={i} className="review">
               <Stars n={r.rating} />
-              <blockquote>{r.text}</blockquote>
+              <blockquote>{r.text.split("\n").map((para, j) => <p key={j}>{para}</p>)}</blockquote>
               <figcaption>
                 <span>{r.author}</span>
                 <GoogleG />

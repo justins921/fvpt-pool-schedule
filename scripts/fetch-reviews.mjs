@@ -8,6 +8,10 @@ const PLACE_ID = "ChIJYXRbTc3uA4gRtZDvLWHXjLc"; // Fox Valley Physical Therapy &
 const OUT = new URL("../src/content/reviews.json", import.meta.url);
 const SHOW = 9; // reviews displayed on the site
 
+// Reviews we never republish, by the reviewer's name as it appears on Google.
+// Use this for reviews that name or describe someone other than the reviewer.
+const HIDE = ["Katherine D"];
+
 const key = process.env.OUTSCRAPER_API_KEY;
 if (!key) {
   console.error("Set OUTSCRAPER_API_KEY");
@@ -30,6 +34,15 @@ if (!place || typeof place.rating !== "number") {
 }
 
 const clean = (t) => String(t ?? "").replace(/\s+/g, " ").trim();
+// Keep paragraph breaks (Outscraper sends them as <br>) but drop any other markup.
+const cleanText = (t) =>
+  String(t ?? "")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<[^>]+>/g, "")
+    .split(/\n+/)
+    .map(clean)
+    .filter(Boolean)
+    .join("\n");
 // Show only the reviewer's first name and last initial, and never the owner's reply
 // (a reply can confirm someone was treated here).
 const shortName = (n) => {
@@ -38,12 +51,13 @@ const shortName = (n) => {
 };
 
 const reviews = (place.reviews_data ?? [])
-  .filter((r) => r.review_rating >= 4 && clean(r.review_text).length >= 40)
+  .filter((r) => r.review_rating >= 4 && cleanText(r.review_text).length >= 40)
+  .filter((r) => !HIDE.some((h) => clean(r.author_title).startsWith(h)))
   .slice(0, SHOW)
   .map((r) => ({
     author: shortName(r.author_title),
     rating: r.review_rating,
-    text: clean(r.review_text),
+    text: cleanText(r.review_text),
     date: r.review_datetime_utc ? new Date(r.review_datetime_utc).toISOString().slice(0, 10) : null,
   }));
 
