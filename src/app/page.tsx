@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ContactCard, Faq, HoursTable, PhonePill, faqSchema } from "@/components/Blocks";
+import { ContactCard, Faq, InfoStrip, PhonePill, faqSchema } from "@/components/Blocks";
+import Headshot from "@/components/Person";
 import Icon from "@/components/Icon";
 import { RatingBadge, ReviewsSection } from "@/components/Reviews";
 import { FAQ } from "@/content/faq";
@@ -55,27 +56,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="info-strip">
-        <div className="wrap">
-          <div>
-            <h3>Contact Us</h3>
-            <p>
-              Ph: <a href={SITE.phoneHref}>{SITE.phone}</a>
-              <br />Fax: {SITE.fax}
-              <br />Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            </p>
-          </div>
-          <div>
-            <h3>Our Oshkosh Clinic</h3>
-            <p>{SITE.address.street},<br />{SITE.address.city}, {SITE.address.state} {SITE.address.zip}</p>
-            <a href={SITE.mapsUrl} className="pill-link">Get Directions</a>
-          </div>
-          <div>
-            <h3>Clinic Hours</h3>
-            <HoursTable />
-          </div>
-        </div>
-      </section>
+      <InfoStrip />
 
       <section className="section soft">
         <div className="wrap">
@@ -142,9 +123,9 @@ export default function Home() {
             <p>Physical therapists, an occupational therapist, a physical therapist assistant and a licensed athletic trainer, with more than 100 years of combined experience.</p>
           </div>
           <div className="people">
-            {TEAM.slice(0, 8).map((m) => (
+            {TEAM.filter((m) => m.photo).slice(0, 6).map((m) => (
               <Link key={m.slug} href={`/team#${m.slug}`} className="person">
-                <Image src={m.photo} alt={m.name} width={320} height={320} />
+                <Headshot m={m} size={320} />
                 <div>
                   <h3>{m.name}</h3>
                   <p>{m.role}</p>

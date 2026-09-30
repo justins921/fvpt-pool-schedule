@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PageHead } from "@/components/Blocks";
+import { ContactCard, HeroButtons, PhotoHero } from "@/components/Blocks";
 import { formatDate, getPosts } from "@/content/blog";
 
 export const metadata: Metadata = {
@@ -13,7 +13,9 @@ export const metadata: Metadata = {
 export default function Blog() {
   return (
     <>
-      <PageHead title="Blog" text="Guides and tips from our therapists." />
+      <PhotoHero title="From Our Blog" text="Guides and tips from our therapists on recovery, pain and staying active." image="/img/therapy-1.jpg">
+        <HeroButtons secondary={{ href: "/services", label: "Our Services" }} />
+      </PhotoHero>
       <section className="section soft">
         <div className="wrap svc-grid">
           {getPosts().map((p) => (
@@ -29,6 +31,7 @@ export default function Blog() {
           ))}
         </div>
       </section>
+      <ContactCard />
     </>
   );
 }

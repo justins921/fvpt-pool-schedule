@@ -3,7 +3,7 @@ export type TeamMember = {
   name: string;
   credentials: string;
   role: string;
-  photo: string;
+  photo?: string; // leave out until the clinic sends a headshot
   about: string;
   education?: string[];
   interests?: string;
@@ -57,6 +57,13 @@ export const TEAM: TeamMember[] = [
     ],
     interests: "TMJ dysfunction, myofascial pain, chronic pain, athletic injuries, and orthopedic conditions of the spine and extremities.",
     certifications: ["Certified Myofascial Trigger Point Therapist (dry needling), Myopain Seminars"],
+  },
+  {
+    slug: "lindsey-hudack",
+    name: "Lindsey Hudack",
+    credentials: "PT",
+    role: "Physical Therapist",
+    about: "Lindsey is a physical therapist at Fox Valley Physical Therapy, treating orthopedic injuries and pain.",
   },
   {
     slug: "darrick-lang",

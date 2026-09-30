@@ -126,3 +126,38 @@ export function CtaBand({ title, text, image }: { title: string; text: string; i
     </section>
   );
 }
+
+export function InfoStrip() {
+  return (
+    <section className="info-strip">
+      <div className="wrap">
+        <div>
+          <h3>Contact Us</h3>
+          <p>
+            Ph: <a href={SITE.phoneHref}>{SITE.phone}</a>
+            <br />Fax: {SITE.fax}
+            <br />Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+        </div>
+        <div>
+          <h3>Our Oshkosh Clinic</h3>
+          <p>{SITE.address.street},<br />{SITE.address.city}, {SITE.address.state} {SITE.address.zip}</p>
+          <a href={SITE.mapsUrl} className="pill-link">Get Directions</a>
+        </div>
+        <div>
+          <h3>Clinic Hours</h3>
+          <HoursTable />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function HeroButtons({ secondary }: { secondary?: { href: string; label: string } }) {
+  return (
+    <div className="btn-row" style={{ justifyContent: "center" }}>
+      <a href={SITE.phoneHref} className="btn">Call {SITE.phone}</a>
+      {secondary && <Link href={secondary.href} className="btn clear">{secondary.label}</Link>}
+    </div>
+  );
+}

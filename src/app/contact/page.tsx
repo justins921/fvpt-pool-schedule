@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HoursTable, PageHead, PhonePill } from "@/components/Blocks";
+import { ContactCard, HeroButtons, InfoStrip, PhotoHero } from "@/components/Blocks";
 import Icon from "@/components/Icon";
 import { SITE } from "@/content/site";
 
@@ -9,28 +9,42 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
+const WAYS = [
+  { icon: "phone", title: "Call Us", body: <><a href={SITE.phoneHref}>{SITE.phone}</a><br />The fastest way to schedule or ask a question.</> },
+  { icon: "doc", title: "Fax", body: <>{SITE.fax}<br />For referrals and records from your doctor.</> },
+  { icon: "mail", title: "Email", body: <><a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />Please don&apos;t email medical details. Call instead.</> },
+];
+
 export default function Contact() {
   return (
     <>
-      <PageHead title="Contact Us" text="The fastest way to reach us is to call. We're happy to answer questions about scheduling, insurance and billing." />
-      <section className="section">
-        <div className="wrap row top">
-          <div>
-            <ul className="info">
-              <li><Icon name="phone" /><div><strong>Phone</strong><a href={SITE.phoneHref}>{SITE.phone}</a></div></li>
-              <li><Icon name="doc" /><div><strong>Fax</strong>{SITE.fax}</div></li>
-              <li><Icon name="mail" /><div><strong>Email</strong><a href={`mailto:${SITE.email}`}>{SITE.email}</a><br /><small>Please don&apos;t email medical details. Call us instead.</small></div></li>
-              <li><Icon name="pin" /><div><strong>Address</strong>{SITE.address.street}<br />{SITE.address.city}, {SITE.address.state} {SITE.address.zip}<br /><a href={SITE.mapsUrl}>Get directions</a></div></li>
-            </ul>
-            <div className="card" style={{ marginBottom: 24 }}>
-              <h3>Hours</h3>
-              <HoursTable lined />
-            </div>
-            <PhonePill />
+      <PhotoHero title="Contact Our Oshkosh Clinic" text="We're happy to answer questions about scheduling, insurance and billing." image="/img/exterior.png">
+        <HeroButtons secondary={{ href: "/new-patients", label: "New Patients" }} />
+      </PhotoHero>
+      <InfoStrip />
+      <section className="section soft">
+        <div className="wrap">
+          <div className="cards">
+            {WAYS.map((w) => (
+              <div key={w.title} className="card feature">
+                <div className="ico"><Icon name={w.icon} /></div>
+                <h3>{w.title}</h3>
+                <p style={{ overflowWrap: "anywhere" }}>{w.body}</p>
+              </div>
+            ))}
           </div>
-          <iframe className="map" style={{ minHeight: 520 }} src={SITE.mapsEmbed} title="Map to Fox Valley Physical Therapy" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>
       </section>
+      <section className="section">
+        <div className="wrap">
+          <div className="intro">
+            <h2>Visit Us At Our Oshkosh Location</h2>
+            <p>{SITE.address.street}, {SITE.address.city}, {SITE.address.state} {SITE.address.zip}. Free parking right out front.</p>
+          </div>
+          <iframe className="map-wide" src={SITE.mapsEmbed} title="Map to Fox Valley Physical Therapy" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+        </div>
+      </section>
+      <ContactCard />
     </>
   );
 }
