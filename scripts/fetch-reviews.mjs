@@ -8,9 +8,9 @@ const PLACE_ID = "ChIJYXRbTc3uA4gRtZDvLWHXjLc"; // Fox Valley Physical Therapy &
 const OUT = new URL("../src/content/reviews.json", import.meta.url);
 const SHOW = 9; // reviews displayed on the site
 
-// Reviews we never republish, by the reviewer's name as it appears on Google.
+// Reviews we never republish, by the name as shown on the site (first name, last initial).
 // Use this for reviews that name or describe someone other than the reviewer.
-const HIDE = ["Katherine D"];
+const HIDE = ["Katherine D."];
 
 const key = process.env.OUTSCRAPER_API_KEY;
 if (!key) {
@@ -52,7 +52,7 @@ const shortName = (n) => {
 
 const reviews = (place.reviews_data ?? [])
   .filter((r) => r.review_rating >= 4 && cleanText(r.review_text).length >= 40)
-  .filter((r) => !HIDE.some((h) => clean(r.author_title).startsWith(h)))
+  .filter((r) => !HIDE.includes(shortName(r.author_title)))
   .slice(0, SHOW)
   .map((r) => ({
     author: shortName(r.author_title),
