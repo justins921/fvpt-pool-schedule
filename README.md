@@ -24,6 +24,10 @@ npm install
 npm run dev
 ```
 
+## Google reviews
+
+Reviews come from Outscraper. `scripts/fetch-reviews.mjs` saves the rating, review count and up to 9 recent 4–5 star reviews with text to `src/content/reviews.json`. It shortens reviewer names to first name and last initial and never includes the clinic's replies. The **Refresh Google reviews** GitHub Action runs it every Monday and commits any changes, which redeploys the site. It needs an `OUTSCRAPER_API_KEY` repository secret. Until the first run, the reviews section and hero rating stay hidden.
+
 ## Deploying
 
 Pushes to the production branch deploy on Vercel automatically. Old Webflow URLs (`/our-team`, `/patient-coverage-and-billing`, `/services/tmj-treatment`, etc.) redirect to their new pages in `next.config.ts`, so existing Google rankings carry over. Search engines are blocked until you set `SITE_LIVE=1` in the Vercel project settings, so do that when the real domain points here.

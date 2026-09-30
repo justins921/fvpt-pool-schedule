@@ -1,0 +1,58 @@
+// Pulls the clinic's Google reviews through Outscraper and saves them to src/content/reviews.json.
+// Run: OUTSCRAPER_API_KEY=... node scripts/fetch-reviews.mjs
+// A GitHub Action runs this weekly (.github/workflows/reviews.yml).
+
+import fs from "node:fs";
+
+const PLACE_ID = "ChIJYXRbTc3uA4gRtZDvLWHXjLc"; // Fox Valley Physical Therapy & Wellness Clinic on Google Maps
+const OUT = new URL("../src/content/reviews.json", import.meta.url);
+const SHOW = 9; // reviews displayed on the site
+
+const key = process.env.OUTSCRAPER_API_KEY;
+if (!key) {
+  console.error("Set OUTSCRAPER_API_KEY");
+  process.exit(1);
+}
+
+const url = new URL("https://api.app.outscraper.com/maps/reviews-v3");
+url.search = new URLSearchParams({ query: PLACE_ID, reviewsLimit: "60", sort: "newest", language: "en", async: "false" }).toString();
+
+const res = await fetch(url, { headers: { "X-API-KEY": key } });
+if (!res.ok) {
+  console.error(`Outscraper returned ${res.status}: ${await res.text()}`);
+  process.exit(1);
+}
+const body = await res.json();
+const place = body?.data?.[0];
+if (!place || typeof place.rating !== "number") {
+  console.error("Unexpected Outscraper response:", JSON.stringify(body).slice(0, 500));
+  process.exit(1);
+}
+
+const clean = (t) => String(t ?? "").replace(/\s+/g, " ").trim();
+// Show only the reviewer's first name and last initial, and never the owner's reply
+// (a reply can confirm someone was treated here).
+const shortName = (n) => {
+  const parts = clean(n).split(" ").filter(Boolean);
+  return parts.length > 1 ? `${parts[0]} ${parts[parts.length - 1][0]}.` : parts[0] || "Google reviewer";
+};
+
+const reviews = (place.reviews_data ?? [])
+  .filter((r) => r.review_rating >= 4 && clean(r.review_text).length >= 40)
+  .slice(0, SHOW)
+  .map((r) => ({
+    author: shortName(r.author_title),
+    rating: r.review_rating,
+    text: clean(r.review_text),
+    date: r.review_datetime_utc ? new Date(r.review_datetime_utc).toISOString().slice(0, 10) : null,
+  }));
+
+const data = { updated: new Date().toISOString().slice(0, 10), rating: place.rating, count: place.reviews, reviews };
+const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : {};
+// Don't churn the file (and trigger a redeploy) when only the date changed.
+if (JSON.stringify({ ...prev, updated: null }) === JSON.stringify({ ...data, updated: null })) {
+  console.log("No changes");
+} else {
+  fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + "\n");
+  console.log(`Saved rating ${data.rating} (${data.count} reviews), ${reviews.length} shown`);
+}

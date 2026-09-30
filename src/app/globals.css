@@ -292,3 +292,15 @@ p { margin: 0 0 1em; }
   .callbar .btn { width: 100%; }
   body { padding-bottom: 70px; }
 }
+
+/* Reviews */
+.stars { color: #f5a623; letter-spacing: 1px; }
+.stars .off { color: #d5d9e0; }
+.rating-badge { display: inline-flex; flex-direction: column; color: #fff; text-decoration: none; font-size: .86rem; line-height: 1.35; }
+.rating-badge b { font-weight: 600; }
+.rating-badge small { color: #aeb6cf; font-size: .74rem; }
+.rating-pill { display: inline-flex; gap: 8px; align-items: center; background: var(--navy); color: #fff; text-decoration: none; border-radius: 999px; padding: 5px 16px; font-size: .8rem; margin-bottom: 14px; }
+.reviews { columns: 3 300px; column-gap: 18px; }
+.review { break-inside: avoid; margin: 0 0 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 20px 22px; box-shadow: 0 4px 18px rgba(21,27,56,.05); }
+.review blockquote { margin: 8px 0 14px; font-size: .88rem; line-height: 1.65; color: var(--body); }
+.review figcaption { display: flex; justify-content: space-between; align-items: center; font-size: .82rem; font-weight: 600; color: var(--ink); }

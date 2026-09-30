@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactCard, Faq, HoursTable, PhonePill, faqSchema } from "@/components/Blocks";
 import Icon from "@/components/Icon";
+import { RatingBadge, ReviewsSection } from "@/components/Reviews";
 import { FAQ } from "@/content/faq";
 import { SERVICES } from "@/content/services";
 import { POOL, SITE } from "@/content/site";
@@ -37,6 +38,7 @@ export default function Home() {
             </p>
             <div className="btn-row" style={{ gap: 22 }}>
               <PhonePill />
+              <RatingBadge />
               <a href={SITE.intakeForm} className="forms-link">Download Intake Form <Icon name="external" className="icon-sm" /></a>
             </div>
           </div>
@@ -130,7 +132,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section soft">
+      <ReviewsSection />
+
+      <section className="section">
         <div className="wrap">
           <div className="intro">
             <p className="kicker">Our therapists</p>
@@ -154,7 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section soft">
         <div className="wrap row">
           <div>
             <p className="kicker">Aquatic therapy & pool access</p>
@@ -172,7 +176,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section soft">
+      <section className="section">
         <div className="wrap">
           <div className="intro">
             <h2>Frequently Asked Questions</h2>
@@ -181,7 +185,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section soft">
         <div className="wrap row top">
           <div>
             <h2>Visit Us At Our Oshkosh Location</h2>
