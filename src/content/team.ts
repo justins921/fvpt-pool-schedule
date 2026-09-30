@@ -10,7 +10,7 @@ export type TeamMember = {
   certifications?: string[];
 };
 
-// Roster matches the old website's Our Team page. TODO: confirm with the clinic who's current.
+// Current staff as of September 2026.
 export const TEAM: TeamMember[] = [
   {
     slug: "steve-sobojinski",
@@ -59,36 +59,6 @@ export const TEAM: TeamMember[] = [
     certifications: ["Certified Myofascial Trigger Point Therapist (dry needling), Myopain Seminars"],
   },
   {
-    slug: "courtney-disterhaft",
-    name: "Dr. Courtney Disterhaft",
-    credentials: "DPT",
-    role: "Physical Therapist",
-    photo: "/img/team/courtney.png",
-    about:
-      "Courtney is from Ripon and excited to practice in a nearby community. She and her husband Clint enjoy hiking, walking their dogs and traveling. She also volunteers with her therapy dog, Cami, at hospitals, nursing homes and schools.",
-    education: [
-      "Doctor of Physical Therapy, Carroll University, Waukesha, WI, 2020",
-      "Bachelor of Science in Exercise Science, Carroll University, 2018",
-    ],
-    interests:
-      "Pediatrics, vestibular rehab, concussion recovery, neurology and orthopedics. Her pediatric work includes torticollis, plagiocephaly, developmental delay, sensory processing, autism, toe walking, cerebral palsy, Down syndrome and juvenile rheumatoid arthritis.",
-  },
-  {
-    slug: "jensen-pearson",
-    name: "Dr. Jensen Pearson",
-    credentials: "DPT",
-    role: "Physical Therapist",
-    photo: "/img/team/jensen.jpeg",
-    about:
-      "Jensen is from Kaukauna and happy to be treating her community close to family and friends. She enjoys traveling, camping, line dancing and reading.",
-    education: [
-      "Doctor of Physical Therapy, Carroll University, Waukesha, WI, 2023",
-      "Bachelor of Arts in Spanish, Carroll University, 2020",
-    ],
-    interests:
-      "People of all ages. Her youngest patient was one month old! Sports medicine, orthopedics, pediatrics and vestibular rehab. She went through years of PT growing up, so she's passionate about helping athletes and young adults get back to what they love.",
-  },
-  {
     slug: "darrick-lang",
     name: "Darrick Lang",
     credentials: "PTA",
@@ -110,44 +80,6 @@ export const TEAM: TeamMember[] = [
     education: ["Bachelor of Science in Physical Education / Athletic Training, University of Wisconsin Oshkosh, 1997"],
     interests: "Evaluating and treating athletic injuries, especially knees and ankles. Sport-specific conditioning and personal training.",
     certifications: ["Certified Athletic Trainer", "Certified Strength & Conditioning Specialist"],
-  },
-  {
-    slug: "deborah-tomasi",
-    name: "Deborah Tomasi",
-    credentials: "PTA",
-    role: "Physical Therapist Assistant",
-    photo: "/img/team/deborah.png",
-    about:
-      "Debbie grew up on Lake Superior's north shore and now calls the Fox Cities home with her husband and three daughters. She loves exploring new cities, theater, mission trips, roller coasters and new food, and teaches group exercise classes. Do what moves you!",
-    education: [
-      "Bachelor's degree, University of Wisconsin Oshkosh, 1999",
-      "Associate Degree in Applied Science, Physical Therapist Assistant, Northeast Wisconsin Technical College, 2022",
-    ],
-    interests:
-      "Functional fitness for healthy aging, meeting people where they are in their recovery. After years in the health insurance industry, she loves being on the treatment side. Movement is medicine!",
-    certifications: ["Essentrics™ Level 1 Certified Instructor", "Certified Personal Trainer"],
-  },
-  {
-    slug: "josie-arneson",
-    name: "Josie Arneson",
-    credentials: "PTA",
-    role: "Physical Therapist Assistant",
-    photo: "/img/team/josie.png",
-    about:
-      "Josie has been a physical therapist assistant at FVPT since 2016. She and her husband Kevin live locally. She went through a lot of PT as a child and went into the field to give back to her community.",
-    education: ["Associate Degree in Applied Science, Northeast Wisconsin Technical College, 2016"],
-    interests: "Aquatic physical therapy, orthopedics and pediatrics.",
-  },
-  {
-    slug: "lucie-nezbed",
-    name: "Lucie Nezbed",
-    credentials: "PTA",
-    role: "Physical Therapist Assistant",
-    photo: "/img/team/lucie.png",
-    about:
-      "Lucie lives in De Pere with her fiancé Hayden and their cat, Boo. She loves Door County, hiking and being on the water, has run eight half marathons, and sings around the Fox Valley.",
-    education: ["Associate Degree in Applied Science, Northeast Wisconsin Technical College, 2020"],
-    interests: "Orthopedics and pediatrics.",
   },
   {
     slug: "paula-clark",

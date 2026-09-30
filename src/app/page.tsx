@@ -139,7 +139,7 @@ export default function Home() {
           <div className="intro">
             <p className="kicker">Our therapists</p>
             <h2>Get To Know Our Team</h2>
-            <p>Physical therapists, an occupational therapist, physical therapist assistants and a licensed athletic trainer, many of them from right here in the Fox Valley.</p>
+            <p>Physical therapists, an occupational therapist, a physical therapist assistant and a licensed athletic trainer, with more than 100 years of combined experience.</p>
           </div>
           <div className="people">
             {TEAM.slice(0, 8).map((m) => (

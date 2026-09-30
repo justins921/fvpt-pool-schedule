@@ -200,7 +200,7 @@ export const SERVICES: Service[] = [
     short: "Therapy for kids, from infants to teen athletes.",
     metaDescription: "Pediatric physical therapy in Oshkosh, WI for torticollis, developmental delay, toe walking, sports injuries and more.",
     image: "/img/kids-workout.jpg",
-    intro: "Several of our therapists specialize in working with kids. Our youngest patients have been just a few weeks old.",
+    intro: "We treat kids of all ages, from infants to teen athletes coming back from sports injuries.",
     sections: [
       {
         heading: "What we treat",

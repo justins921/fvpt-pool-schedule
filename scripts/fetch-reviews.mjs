@@ -12,6 +12,11 @@ const SHOW = 9; // reviews displayed on the site
 // Use this for reviews that name or describe someone other than the reviewer.
 const HIDE = ["Katherine D."];
 
+// Staff who no longer work at the clinic. Reviews that name them are skipped so the
+// site never praises someone patients can't book with. Add names here when people leave.
+const FORMER_STAFF = ["Jordan", "Kasper", "Courtney", "Disterhaft", "Baumann", "Jensen", "Pearson", "Deborah", "Debbie", "Tomasi", "Josie", "Arneson", "Lucie", "Nezbed", "Patti"];
+const mentionsFormerStaff = (text) => FORMER_STAFF.some((n) => new RegExp(`\\b${n}\\b`, "i").test(text));
+
 const key = process.env.OUTSCRAPER_API_KEY;
 if (!key) {
   console.error("Set OUTSCRAPER_API_KEY");
@@ -53,6 +58,7 @@ const shortName = (n) => {
 const reviews = (place.reviews_data ?? [])
   .filter((r) => r.review_rating >= 4 && cleanText(r.review_text).length >= 40)
   .filter((r) => !HIDE.includes(shortName(r.author_title)))
+  .filter((r) => !mentionsFormerStaff(cleanText(r.review_text)))
   .slice(0, SHOW)
   .map((r) => ({
     author: shortName(r.author_title),

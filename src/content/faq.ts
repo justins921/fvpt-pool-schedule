@@ -32,7 +32,7 @@ export const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Do you treat kids?",
-    a: "Yes. Several of our therapists specialize in pediatrics, from infants with torticollis to teen athletes coming back from sports injuries.",
+    a: "Yes. We treat kids of all ages, from infants to teen athletes coming back from sports injuries.",
   },
   {
     q: "Where are you located?",
