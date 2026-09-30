@@ -3,7 +3,8 @@
 
 export const CLINIC = {
   name: "Fox Valley Physical Therapy & Wellness Clinic",
-  phone: "(920) 000-0000", // TODO: real front-desk number
+  phone: "(920) 235-8966",
+  email: "admin@foxvalleyphysicaltherapy.com",
   address: "909 S Washburn St, Oshkosh, WI 54904",
   timeZone: "America/Chicago",
 };
