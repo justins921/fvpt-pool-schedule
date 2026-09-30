@@ -15,7 +15,9 @@ const HIDE = ["Katherine D."];
 // Staff who no longer work at the clinic. Reviews that name them are skipped so the
 // site never praises someone patients can't book with. Add names here when people leave.
 const FORMER_STAFF = ["Jordan", "Kasper", "Courtney", "Disterhaft", "Baumann", "Jensen", "Pearson", "Deborah", "Debbie", "Tomasi", "Josie", "Arneson", "Lucie", "Nezbed", "Patti"];
-const mentionsFormerStaff = (text) => FORMER_STAFF.some((n) => new RegExp(`\\b${n}\\b`, "i").test(text));
+// Staff named in reviews who aren't on the website. Hidden until the clinic confirms they still work there.
+const UNCONFIRMED_STAFF = ["Preston"];
+const mentionsFormerStaff = (text) => [...FORMER_STAFF, ...UNCONFIRMED_STAFF].some((n) => new RegExp(`\\b${n}\\b`, "i").test(text));
 
 const key = process.env.OUTSCRAPER_API_KEY;
 if (!key) {
@@ -50,6 +52,9 @@ const cleanText = (t) =>
     .join("\n");
 // Show only the reviewer's first name and last initial, and never the owner's reply
 // (a reply can confirm someone was treated here).
+// Google display names that don't shorten into a real-looking name.
+const NAME_OVERRIDES = { "It's M.": "Google reviewer" };
+const displayName = (n) => NAME_OVERRIDES[shortName(n)] ?? shortName(n);
 const shortName = (n) => {
   const parts = clean(n).split(" ").filter(Boolean);
   return parts.length > 1 ? `${parts[0]} ${parts[parts.length - 1][0]}.` : parts[0] || "Google reviewer";
@@ -61,7 +66,7 @@ const reviews = (place.reviews_data ?? [])
   .filter((r) => !mentionsFormerStaff(cleanText(r.review_text)))
   .slice(0, SHOW)
   .map((r) => ({
-    author: shortName(r.author_title),
+    author: displayName(r.author_title),
     rating: r.review_rating,
     text: cleanText(r.review_text),
     date: r.review_datetime_utc ? new Date(r.review_datetime_utc).toISOString().slice(0, 10) : null,
