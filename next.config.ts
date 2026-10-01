@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Content is read from disk at runtime by server routes (the editor and the 404 page), so ship it with them.
+  outputFileTracingIncludes: { "/**": ["./src/content/**/*"] },
   // Old Webflow URLs -> new pages, so existing Google rankings and bookmarks keep working.
   async redirects() {
     return [
