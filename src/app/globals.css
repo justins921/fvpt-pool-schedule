@@ -343,3 +343,18 @@ p { margin: 0 0 1em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Printing a page from the browser: just the content, dark text on white */
+@media print {
+  .header, .callbar, .skip, .footer nav, .footer .top .btn, iframe, .map, .map-wide, .btn-row, .phone-pill, .forms-link { display: none !important; }
+  body { font-size: 11pt; color: #000; background: #fff; }
+  .hero, .page-head, .photo-hero, .contact-card, .cta-band, .footer, .soft { background: #fff !important; color: #000 !important; }
+  .hero::before, .photo-hero::before { display: none; }
+  .hero h1, .page-head h1, .photo-hero h1, .contact-card h2, .cta-band h2, .footer .logo strong { color: #000 !important; }
+  .hero .lede, .photo-hero p, .contact-card, .contact-card a, .cta-band p, .footer, .footer a { color: #222 !important; }
+  .section { padding: 18pt 0; }
+  .photo-hero { padding: 12pt 0; text-align: left; }
+  .contact-card .pic, .cta-band .pic { display: none; }
+  .svc, .card, .faq-item, .review, .person, .staff-card { break-inside: avoid; box-shadow: none; }
+  a[href^="http"]::after { content: ""; }
+}
