@@ -5,10 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Icon from "./Icon";
-import { NAV } from "@/content/nav";
+import type { NavItem } from "@/content/nav";
 import { SITE } from "@/content/site";
 
-export default function Header() {
+export default function Header({ nav: NAV }: { nav: NavItem[] }) {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState<string | null>(null); // which desktop dropdown is open

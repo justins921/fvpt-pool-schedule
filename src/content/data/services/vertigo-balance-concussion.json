@@ -1,0 +1,38 @@
+{
+  "name": "Vertigo, Balance & Concussion",
+  "order": 6,
+  "short": "Vestibular rehab for dizziness, vertigo and concussion recovery.",
+  "metaDescription": "Vertigo and vestibular therapy in Oshkosh, WI. Treatment for BPPV, dizziness, balance problems and concussion recovery.",
+  "image": "/img/services/vertigo-balance-concussion/image.webp",
+  "intro": "Dizziness and vertigo usually come from the inner ear, and most cases respond well to therapy. We figure out the cause and use targeted maneuvers and exercises to get you steady again.",
+  "sections": [
+    {
+      "heading": "What we treat",
+      "list": [
+        "Positional vertigo (BPPV)",
+        "Dizziness and unsteadiness",
+        "Balance problems and fall risk",
+        "Concussion recovery"
+      ]
+    },
+    {
+      "heading": "How we treat",
+      "list": [
+        "Canalith repositioning, such as the Epley maneuver, for BPPV",
+        "Gaze stabilization exercises",
+        "Habituation exercises to reduce dizziness",
+        "Balance training and fall prevention"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "What is BPPV?",
+      "answer": "Benign Paroxysmal Positional Vertigo. Tiny calcium crystals in the inner ear get knocked out of place and cause spinning when you move your head. Repositioning maneuvers like the Epley maneuver move them back."
+    }
+  ],
+  "related": [
+    "physical-therapy",
+    "pediatrics"
+  ]
+}

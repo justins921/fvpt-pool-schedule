@@ -1,0 +1,29 @@
+{
+  "seoTitle": "Therapeutic Pool Access in Oshkosh",
+  "seoDescription": "Current and former Fox Valley Physical Therapy patients can reserve the only therapeutic pool in Oshkosh for independent exercise. $35 a month for 2 visits a week.",
+  "heroTitle": "Pool Access For Patients",
+  "heroText": "Keep up your progress in the only therapeutic pool in Oshkosh. Current and former patients can reserve the pool for their own exercise.",
+  "title": "Your Own Hour In The Pool",
+  "text": "The pool is reserved for one person at a time, so the hour is yours. Most people book a month at a time.",
+  "points": [
+    "Open to current and former Fox Valley PT patients",
+    "One person per 60-minute session",
+    "Book any hour the clinic is open. Last start time is {lastStart}, out of the pool by {outBy}.",
+    "A signed pool waiver is required before your first swim"
+  ],
+  "tipsTitle": "Before Your First Swim",
+  "tips": [
+    { "icon": "water", "title": "What To Bring", "text": "Your swimsuit and a towel." },
+    { "icon": "clock", "title": "Be On Time", "text": "Come at the time you signed up for. Someone may be booked right after you." },
+    { "icon": "doc", "title": "Sign The Waiver", "text": "Everyone signs a pool waiver before their first session. Ask the front desk." }
+  ],
+  "faq": [
+    { "question": "Who can use the pool?", "answer": "Current and former Fox Valley Physical Therapy patients. The pool isn't open to the general public." },
+    { "question": "How much does it cost?", "answer": "{poolPrice} a month for {visitsPerWeek} visits a week. Most people book and pay a month at a time." },
+    { "question": "When can I book?", "answer": "Any hour the clinic is open. Sessions are 60 minutes, the last start time is {lastStart}, and everyone is out of the pool by {outBy}." },
+    { "question": "Will anyone else be in the pool?", "answer": "No. The pool is reserved for one person at a time, so the hour is yours." },
+    { "question": "I'm not a patient yet. Can I use the pool?", "answer": "Pool access is for current and former patients. If you're interested in aquatic therapy with one of our therapists, call us to schedule an evaluation." }
+  ],
+  "ctaTitle": "Ready To Book Pool Time?",
+  "ctaText": "Call the front desk to reserve your hours for the month."
+}

@@ -6,5 +6,5 @@ export default function robots(): MetadataRoute.Robots {
   if (process.env.SITE_LIVE !== "1") {
     return { rules: { userAgent: "*", disallow: "/" } };
   }
-  return { rules: { userAgent: "*", allow: "/" }, sitemap: `${SITE.url}/sitemap.xml` };
+  return { rules: { userAgent: "*", allow: "/", disallow: ["/keystatic", "/api/"] }, sitemap: `${SITE.url}/sitemap.xml` };
 }

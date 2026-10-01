@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "./Icon";
-import { AREAS } from "@/content/nav";
-import { SITE } from "@/content/site";
+import { AREAS, SITE } from "@/content/site";
 
 const LINKS = [
   ["Home", "/"], ["Services", "/services"], ["Pool Access", "/pool"], ["New Patients", "/new-patients"],

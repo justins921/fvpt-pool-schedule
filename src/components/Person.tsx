@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { TeamMember } from "@/content/team";
+import type { TeamMember } from "@/content/collections";
 
 // Headshot, or a branded placeholder for staff whose photo we don't have yet.
 export default function Headshot({ m, size }: { m: TeamMember; size: number }) {

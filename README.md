@@ -6,27 +6,26 @@ A static Next.js site, hosted on Vercel. There's no database and no forms, so th
 
 ## Editing content
 
-Almost everything lives in `src/content/`:
+Use the website editor at **/keystatic** (for example `https://www.foxvalleyphysicaltherapy.com/keystatic`). Sign in, pick a page on the left, change the text, and click **Save**. The site updates about a minute later.
 
-| What | File |
-| --- | --- |
-| Phone, address, **hours**, nav, pool pricing and booking link | `src/content/site.ts` |
-| Services (one page each) | `src/content/services.ts` |
-| Team bios | `src/content/team.ts` (photos in `public/img/team/`) |
-| Blog posts | `src/content/blog/*.md` (add a file to add a post) |
+- **Pages:** homepage and every page's wording, including the Google search title and description
+- **Services, team & blog:** each service page, team bio (with headshot upload) and blog post
+- **Frequently asked questions:** one list, with a "Show on" setting for each question
+- **Clinic settings:** phone, fax, email, address, **hours**, areas served, and pool price and booking link
 
-**Pool booking:** once Practice Perfect's Client Portal is turned on, paste the portal link into `POOL.bookingUrl` in `site.ts`. The Pool page switches from "Call to book" to a "Book pool time online" button.
+Text fields can use `{poolPrice}`, `{visitsPerWeek}`, `{lastStart}`, `{outBy}`, `{phone}`, `{street}` and `{city}`. They fill in from Clinic settings, so a price or phone change happens in one place.
 
-## Photos
+Content lives in `src/content/data/` (JSON) and `src/content/blog/` (Markdown). Each save is a commit to this repo, so every change can be undone in git.
 
-Real clinic photos live in `public/img`. Free stock photos (CC0/public domain, found through Openverse) live in `public/img/stock` with sources in `CREDITS.md`. Stock is only used for treatments and concepts, never to stand in for the clinic, its staff or its pool.
+### Editor setup (one time)
 
-## Run locally
+The editor uses [Keystatic Cloud](https://keystatic.cloud), which is free for up to 3 users and doesn't require GitHub accounts for editors.
 
-```bash
-npm install
-npm run dev
-```
+1. Create a team and project at keystatic.cloud and connect it to this GitHub repo.
+2. In Vercel, add `NEXT_PUBLIC_KEYSTATIC_PROJECT` = `your-team/your-project` and redeploy.
+3. In Keystatic Cloud, invite Steve and Gina by email.
+
+Running `npm run dev` locally, the editor saves straight to your files with no sign-in.
 
 ## Google reviews
 

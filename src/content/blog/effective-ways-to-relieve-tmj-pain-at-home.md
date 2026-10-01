@@ -1,7 +1,7 @@
 ---
 title: Effective Ways to Relieve TMJ Pain
 date: 2024-04-17
-image: /img/therapy-tmj.jpg
+image: /img/blog/effective-ways-to-relieve-tmj-pain-at-home/image.jpg
 description: The signs of TMJ dysfunction and how physical therapy helps relieve jaw pain and restore movement.
 ---
 A constant ache in your jaw is often a sign of temporomandibular joint (TMJ) dysfunction. It's common, it's frustrating, and it's very treatable.

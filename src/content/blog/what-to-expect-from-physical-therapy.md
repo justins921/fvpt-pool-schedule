@@ -1,7 +1,7 @@
 ---
 title: What to Expect From Physical Therapy
 date: 2026-06-25
-image: /img/patient-treated.jpg
+image: /img/blog/what-to-expect-from-physical-therapy/image.jpg
 description: What happens at your first physical therapy visit, how treatment plans work, and how to get the most out of therapy.
 ---
 Starting physical therapy is a big step toward feeling better. Whether you're dealing with a new injury, chronic pain or recovery after surgery, knowing what happens at PT takes the guesswork out of it. Physical therapy isn't just about recovering. It's about giving you the knowledge and skills to stay healthy long term.

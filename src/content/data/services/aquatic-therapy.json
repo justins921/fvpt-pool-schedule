@@ -1,0 +1,43 @@
+{
+  "name": "Aquatic Therapy",
+  "order": 2,
+  "short": "The only therapeutic pool in Oshkosh. Rehab with less stress on your joints.",
+  "metaDescription": "Aquatic therapy in Oshkosh, WI. Fox Valley Physical Therapy has the only therapeutic pool in Oshkosh, for arthritis, post-surgical rehab, balance and pain.",
+  "image": "/img/services/aquatic-therapy/image.jpg",
+  "intro": "We're the only clinic in Oshkosh with a therapeutic pool. Water takes weight off healing joints, so you can start moving and strengthening sooner and with less pain than you could on land.",
+  "sections": [
+    {
+      "heading": "Why the water helps",
+      "list": [
+        "Buoyancy takes pressure off your joints while you exercise",
+        "Less muscle guarding and spasm",
+        "Eases the effects of arthritis",
+        "Better circulation",
+        "Less joint pain and inflammation",
+        "Better balance, walking, coordination and flexibility"
+      ]
+    },
+    {
+      "heading": "Who it's good for",
+      "body": "Aquatic therapy works well after joint replacement or a fracture, for arthritis, chronic back pain and fibromyalgia, and for balance and walking problems. Warm water and gentle resistance let you build strength without overloading tissue that's still healing."
+    },
+    {
+      "heading": "Pool time on your own",
+      "body": "Current and former patients can also book the pool for independent exercise. See the Pool page for how it works."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do I need to know how to swim?",
+      "answer": "No. Aquatic therapy is exercise in the water, not swimming laps, and your therapist is with you the whole time."
+    },
+    {
+      "question": "Can I keep using the pool after therapy ends?",
+      "answer": "Yes. Current and former patients can reserve the pool for independent exercise. See the Pool page for details."
+    }
+  ],
+  "related": [
+    "physical-therapy",
+    "vertigo-balance-concussion"
+  ]
+}

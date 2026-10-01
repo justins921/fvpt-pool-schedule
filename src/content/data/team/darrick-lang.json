@@ -1,0 +1,12 @@
+{
+  "name": "Darrick Lang",
+  "order": 5,
+  "credentials": "PTA",
+  "role": "Physical Therapist Assistant",
+  "photo": "/img/team/darrick-lang/photo.png",
+  "about": "Darrick has been a physical therapist assistant at FVPT since 2005. He and his wife Cara have five children. He loves shifter kart racing, motorsports and woodworking, and hunts pheasants and ducks in the fall with his dog Meg.",
+  "education": [
+    "Associate Degree in Applied Science, Physical Therapist Assistant, Northeast Wisconsin Technical College, 2004"
+  ],
+  "interests": "Wound care and upper extremity injuries. Custom splint making and brace fitting."
+}

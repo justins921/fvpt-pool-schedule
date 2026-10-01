@@ -1,0 +1,24 @@
+{
+  "name": "Wellness & Prevention",
+  "order": 10,
+  "short": "Programs to keep you moving well, including annual wellness checks.",
+  "metaDescription": "Wellness and injury prevention programs in Oshkosh, WI, including annual wellness checks, women's health, stretching programs and spine education.",
+  "image": "/img/services/wellness/image.jpg",
+  "intro": "The best injury is the one you avoid. These programs help you stay strong and moving well.",
+  "sections": [
+    {
+      "heading": "Programs",
+      "list": [
+        "Annual wellness checks (\"Check Your Engine\")",
+        "Back, neck and spine education to prevent injury",
+        "Personalized exercise programs",
+        "Women's health: pelvic pain, pelvic floor strengthening, and pre- and postpartum exercise",
+        "Professional therapeutic stretching programs"
+      ]
+    }
+  ],
+  "related": [
+    "physical-therapy",
+    "work-injuries"
+  ]
+}

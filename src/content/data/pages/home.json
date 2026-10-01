@@ -1,0 +1,30 @@
+{
+  "seoTitle": "Physical Therapy in Oshkosh, WI | Fox Valley Physical Therapy",
+  "seoDescription": "One-on-one physical therapy in Oshkosh since 1990, with the only therapeutic pool in town. No referral needed, and most insurance accepted.",
+  "heroKicker": "Physical therapy in Oshkosh, WI",
+  "heroTitle": "Your Therapist. One-On-One. Every Visit.",
+  "heroText": "Locally owned since 1990, with the only therapeutic pool in Oshkosh. No referral needed, and we take most insurance, including Medicare.",
+  "heroCaptionName": "Steve & Regina Sobojinski",
+  "heroCaptionText": "Founders, treating patients since 1990",
+  "servicesKicker": "One-on-one physical therapy",
+  "servicesTitle": "Oshkosh Physical Therapy Services",
+  "approachTitle": "A Better Approach To Physical Therapy",
+  "approachText": "Fox Valley Physical Therapy & Wellness Clinic started in a 500 square foot office in 1990. Today it's a 7,500 square foot clinic with a therapeutic pool and a fully equipped gym, and a team with more than 100 years of combined experience. What hasn't changed is how we treat people.",
+  "approachCaptionName": "Steve Sobojinski, OTR, CSCS",
+  "approachCaptionText": "\"I treat their injuries as if they were my injuries.\"",
+  "benefits": [
+    { "icon": "user", "title": "One-On-One, Every Visit", "text": "At every appointment you get hands-on, one-on-one attention from your therapist." },
+    { "icon": "clipboard", "title": "No Referral Needed", "text": "Call and schedule directly. Our office will try to check your insurance benefits for you." },
+    { "icon": "water", "title": "The Only Therapeutic Pool In Oshkosh", "text": "Aquatic therapy for arthritis, joint replacements, balance and pain, right here in the clinic." },
+    { "icon": "talk", "title": "We Talk To Your Doctor", "text": "We keep your physician in the loop and call them if your plan needs to change." }
+  ],
+  "teamKicker": "Our therapists",
+  "teamTitle": "Get To Know Our Team",
+  "teamText": "Physical therapists, an occupational therapist, a physical therapist assistant and a licensed athletic trainer, with more than 100 years of combined experience.",
+  "poolKicker": "Aquatic therapy & pool access",
+  "poolTitle": "The Only Therapeutic Pool In Oshkosh",
+  "poolText": "Warm water takes weight off healing joints, so you can start moving and strengthening sooner and with less pain. It's a great fit for arthritis, rehab after surgery or joint replacement, balance problems and chronic back pain.\n\nFinished with therapy? Current and former patients can reserve the pool on their own for {poolPrice} a month.",
+  "faqTitle": "Frequently Asked Questions",
+  "visitTitle": "Visit Us At Our Oshkosh Location",
+  "visitText": "Free parking right out front on S Washburn Street. Download the intake form ahead of time to save a few minutes at check-in."
+}

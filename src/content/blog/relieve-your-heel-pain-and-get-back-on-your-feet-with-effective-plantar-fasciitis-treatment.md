@@ -1,7 +1,7 @@
 ---
 title: Relieve Your Heel Pain With Plantar Fasciitis Treatment
 date: 2024-04-17
-image: /img/stock/foot-therapy.jpg
+image: /img/blog/relieve-your-heel-pain-and-get-back-on-your-feet-with-effective-plantar-fasciitis-treatment/image.jpg
 description: What causes plantar fasciitis heel pain and how physical therapy treats it without surgery.
 ---
 Plantar fasciitis is one of the most common causes of heel pain. It can make walking, running or even standing for long stretches miserable. Physical therapy is one of the best ways to treat it.

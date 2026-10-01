@@ -1,0 +1,16 @@
+{
+  "name": "Dr. Stephanie Meyer",
+  "order": 3,
+  "credentials": "DPT, CMTPT",
+  "role": "Physical Therapist",
+  "photo": "/img/team/stephanie-meyer/photo.png",
+  "about": "Stephanie has been a physical therapist at FVPT since 2020. She's from Hortonville and is happy to care for her local community. She loves biking, hiking and ice skating with family and friends.",
+  "education": [
+    "Doctor of Physical Therapy, Carroll University, Waukesha, WI, 2020",
+    "Bachelor of Science in Exercise Science, Carroll University, 2018"
+  ],
+  "interests": "TMJ dysfunction, myofascial pain, chronic pain, athletic injuries, and orthopedic conditions of the spine and extremities.",
+  "certifications": [
+    "Certified Myofascial Trigger Point Therapist (dry needling), Myopain Seminars"
+  ]
+}

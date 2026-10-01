@@ -1,0 +1,59 @@
+{
+  "phone": "(920) 235-8966",
+  "fax": "(920) 235-1526",
+  "email": "admin@foxvalleyphysicaltherapy.com",
+  "address": {
+    "street": "909 S Washburn Street",
+    "city": "Oshkosh",
+    "state": "WI",
+    "zip": "54904"
+  },
+  "founded": 1990,
+  "hours": [
+    {
+      "days": "Monday – Thursday",
+      "time": "8:00 am – 5:30 pm",
+      "opens": "08:00",
+      "closes": "17:30",
+      "schemaDays": [
+        "Mo",
+        "Tu",
+        "We",
+        "Th"
+      ]
+    },
+    {
+      "days": "Friday",
+      "time": "8:00 am – 1:00 pm",
+      "opens": "08:00",
+      "closes": "13:00",
+      "schemaDays": [
+        "Fr"
+      ]
+    },
+    {
+      "days": "Saturday – Sunday",
+      "time": "Closed",
+      "opens": "",
+      "closes": "",
+      "schemaDays": []
+    }
+  ],
+  "areas": [
+    "Oshkosh, WI",
+    "Neenah, WI",
+    "Menasha, WI",
+    "Appleton, WI",
+    "Omro, WI",
+    "Winneconne, WI",
+    "Fond du Lac, WI",
+    "Ripon, WI"
+  ],
+  "pool": {
+    "bookingUrl": "",
+    "monthlyPrice": "$35",
+    "visitsPerWeek": 2,
+    "lastStart": "4:00 pm",
+    "outBy": "5:00 pm"
+  }
+}

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getPosts } from "@/content/blog";
-import { SERVICES } from "@/content/services";
+import { SERVICES } from "@/content/collections";
 import { SITE } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {

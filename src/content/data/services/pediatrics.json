@@ -1,0 +1,28 @@
+{
+  "name": "Pediatric Therapy",
+  "order": 7,
+  "short": "Therapy for kids, from infants to teen athletes.",
+  "metaDescription": "Pediatric physical therapy in Oshkosh, WI for torticollis, developmental delay, toe walking, sports injuries and more.",
+  "image": "/img/services/pediatrics/image.jpg",
+  "intro": "We treat kids of all ages, from infants to teen athletes coming back from sports injuries.",
+  "sections": [
+    {
+      "heading": "What we treat",
+      "list": [
+        "Torticollis and plagiocephaly",
+        "Developmental delay",
+        "Sensory integration and sensory processing",
+        "Autism",
+        "Flat feet and toe walking",
+        "Cerebral palsy and Down syndrome",
+        "Juvenile rheumatoid arthritis",
+        "Strength and endurance during cancer treatment",
+        "Sports injuries"
+      ]
+    }
+  ],
+  "related": [
+    "sports-medicine",
+    "vertigo-balance-concussion"
+  ]
+}

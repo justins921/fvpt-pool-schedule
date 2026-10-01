@@ -2,7 +2,7 @@
 title: Discover Aquatic Physical Therapy for Faster Healing
 date: 2024-04-17
 description: How aquatic therapy uses buoyancy, warmth and water resistance to help you recover faster, and who it's best for.
-image: /img/pool.jpg
+image: /img/blog/discover-aquatic-physical-therapy-for-faster-healing/image.jpg
 ---
 In the water, movements that hurt on land suddenly become possible. That's the idea behind aquatic physical therapy, and it's why we have the only therapeutic pool in Oshkosh.
 

@@ -2,7 +2,7 @@
 title: "Vertigo Physical Therapy: How It Helps and What to Expect"
 date: 2024-05-24
 description: How vestibular rehabilitation treats vertigo and dizziness, including BPPV, and what a treatment plan looks like.
-image: /img/blog-vertigo.webp
+image: /img/blog/vertigo-physical-therapy-how-it-helps-and-what-to-expect/image.webp
 ---
 Vertigo can make every step feel uncertain. The good news: guided physical therapy is one of the most effective ways to get your balance back.
 

@@ -1,0 +1,51 @@
+{
+  "name": "Physical Therapy",
+  "order": 1,
+  "short": "One-on-one care for pain, injuries and recovery after surgery.",
+  "metaDescription": "One-on-one physical therapy in Oshkosh, WI for back and neck pain, joint injuries, arthritis and post-surgical rehab. No referral needed.",
+  "image": "/img/services/physical-therapy/image.jpg",
+  "intro": "Every visit is hands-on and one-on-one with your therapist. We find what's causing the problem, treat it, and teach you how to keep it from coming back. You don't need a referral to see a physical therapist.",
+  "sections": [
+    {
+      "heading": "What we treat",
+      "list": [
+        "Neck and back pain",
+        "Shoulder, knee, hip and ankle injuries",
+        "Hand and wrist injuries",
+        "Plantar fasciitis",
+        "Headaches",
+        "Rehab after surgery and joint replacement",
+        "SI joint and thoracic spine problems",
+        "Scoliosis",
+        "Arthritis and fibromyalgia",
+        "Balance problems and neurological conditions"
+      ]
+    },
+    {
+      "heading": "Your evaluation",
+      "body": "Your first visit starts with a full evaluation. We'll go over your history, test how you move, measure strength and joint function, and then explain what we found and what we recommend, to you and to your doctor."
+    },
+    {
+      "heading": "How we treat",
+      "list": [
+        "Hands-on manual therapy, including myofascial release, soft tissue work, joint mobilization and muscle energy technique",
+        "McKenzie Method of Mechanical Diagnosis and Therapy for the spine and extremities",
+        "Graston Technique and trigger point therapy",
+        "Therapeutic and functional exercise, including work- and sport-specific training",
+        "Trunk and back stabilization",
+        "Kinesiology taping",
+        "Modalities such as electrical stimulation, ultrasound, ice and heat, fluidotherapy, whirlpool, phonophoresis and iontophoresis",
+        "A home exercise program so you keep improving between visits"
+      ]
+    },
+    {
+      "heading": "How long visits take",
+      "body": "Treatment sessions run from 30 minutes to two hours, depending on what you need."
+    }
+  ],
+  "related": [
+    "aquatic-therapy",
+    "dry-needling",
+    "occupational-hand-therapy"
+  ]
+}

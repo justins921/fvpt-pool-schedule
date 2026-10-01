@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { marked } from "marked";
+import { parse as parseYaml } from "yaml";
 
 export type Post = {
   slug: string;
@@ -17,17 +18,13 @@ function parse(slug: string): Post {
   const raw = fs.readFileSync(path.join(DIR, `${slug}.md`), "utf8");
   const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
   if (!match) throw new Error(`Missing frontmatter in ${slug}.md`);
-  const meta: Record<string, string> = {};
-  for (const line of match[1].split("\n")) {
-    const i = line.indexOf(":");
-    if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim().replace(/^"(.*)"$/, "$1");
-  }
+  const meta = (parseYaml(match[1]) ?? {}) as Record<string, string>;
   return {
     slug,
     title: meta.title,
-    date: meta.date,
-    description: meta.description,
-    image: meta.image,
+    date: String(meta.date),
+    description: meta.description ?? "",
+    image: meta.image || undefined,
     html: marked.parse(match[2], { async: false }) as string,
   };
 }

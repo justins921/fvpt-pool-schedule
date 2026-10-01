@@ -1,0 +1,26 @@
+{
+  "seoTitle": "Insurance & Billing",
+  "seoDescription": "Fox Valley Physical Therapy accepts most insurance, including Medicare, Aetna, BCBS, Cigna, Humana and UnitedHealthcare, plus worker's comp and auto accident claims.",
+  "heroTitle": "Insurance & Billing",
+  "heroText": "We're a provider for most insurance plans, including Medicare. You don't need a referral to see a physical therapist.",
+  "plansKicker": "In network with most plans",
+  "plansTitle": "Insurance We Accept",
+  "plansText": "Don't see your plan? Give us a call. We may still be able to help.",
+  "options": [
+    { "icon": "shield", "title": "Worker's Comp & Auto Accidents", "text": "We accept worker's compensation and motor vehicle accident claims, and our office coordinates with your case manager." },
+    { "icon": "user", "title": "Private Pay", "text": "No insurance, out of network, or out of visits? We have several affordable private pay options." },
+    { "icon": "heart", "title": "HSA & FSA", "text": "Physical therapy is a qualified expense for Health Savings and Flexible Spending Accounts." }
+  ],
+  "benefitsKicker": "Before your first visit",
+  "benefitsTitle": "Checking Your Benefits",
+  "benefitsText": "As a service to our patients, we try to contact your insurance to find out your physical therapy benefits. In the end, you're responsible for confirming your benefits and in-network status with your insurance company.",
+  "benefitsPoints": [
+    "Call the customer service number on the back of your insurance card",
+    "Ask about your physical therapy benefits, visit limits and whether you need a referral",
+    "Confirm Fox Valley Physical Therapy is in network for your plan"
+  ],
+  "benefitsFooter": "Questions? Our office staff is happy to help. Call {phone}.",
+  "faqTitle": "Frequently Asked Questions",
+  "ctaTitle": "Questions About Your Coverage?",
+  "ctaText": "Our office staff handles billing and insurance every day. Call and we'll help you sort it out."
+}
