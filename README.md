@@ -17,6 +17,10 @@ Almost everything lives in `src/content/`:
 
 **Pool booking:** once Practice Perfect's Client Portal is turned on, paste the portal link into `POOL.bookingUrl` in `site.ts`. The Pool page switches from "Call to book" to a "Book pool time online" button.
 
+## Photos
+
+Real clinic photos live in `public/img`. Free stock photos (CC0/public domain, found through Openverse) live in `public/img/stock` with sources in `CREDITS.md`. Stock is only used for treatments and concepts, never to stand in for the clinic, its staff or its pool.
+
 ## Run locally
 
 ```bash

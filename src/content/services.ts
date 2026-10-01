@@ -152,7 +152,7 @@ export const SERVICES: Service[] = [
     seoTitle: "Sports Medicine",
     short: "Get athletes back on the field, with certified athletic trainers.",
     metaDescription: "Sports medicine and athletic training in Oshkosh, WI. Evaluation and rehab of athletic injuries, sport-specific conditioning, and certified athletic trainers.",
-    image: "/img/patient-treated.jpg",
+    image: "/img/stock/sports-stretch.jpg",
     intro:
       "Our licensed athletic trainer and therapists treat athletes of every level, from youth sports to pros. We treat the injury and then get you ready for the demands of your sport.",
     sections: [
@@ -251,7 +251,7 @@ export const SERVICES: Service[] = [
     name: "Work Injuries & Worker's Comp",
     short: "Hurt on the job? You choose where you get therapy.",
     metaDescription: "Work injury rehab and worker's compensation physical therapy in Oshkosh, WI. Plus ergonomic training and injury prevention programs for employers.",
-    image: "/img/patient-treated.jpg",
+    image: "/img/stock/construction-worker.jpg",
     intro:
       "If you're hurt at work, you have a choice in where you get therapy. We provide complete treatment, work-specific retraining and education to get you back to your job.",
     sections: [
@@ -275,7 +275,7 @@ export const SERVICES: Service[] = [
     name: "Wellness & Prevention",
     short: "Programs to keep you moving well, including annual wellness checks.",
     metaDescription: "Wellness and injury prevention programs in Oshkosh, WI, including annual wellness checks, women's health, stretching programs and spine education.",
-    image: "/img/staff-group.jpg",
+    image: "/img/stock/wellness-stretch.jpg",
     intro: "The best injury is the one you avoid. These programs help you stay strong and moving well.",
     sections: [
       {

@@ -1,7 +1,7 @@
 ---
 title: Improving Blood Flow With Restriction Training
 date: 2024-04-17
-image: /img/kids-workout.jpg
+image: /img/stock/dumbbell-training.jpg
 description: What blood flow restriction (BFR) training is, how it builds strength with light loads, and what to know before trying it.
 ---
 Good circulation is vital for healing and performance. Blood flow restriction training is one way therapists help patients build strength when heavy lifting isn't an option.
