@@ -14,7 +14,7 @@
   "tipsTitle": "Before Your First Swim",
   "tips": [
     { "icon": "water", "title": "What To Bring", "text": "Your swimsuit and a towel." },
-    { "icon": "clock", "title": "Be On Time", "text": "Come at the time you signed up for. Someone may be booked right after you." },
+    { "icon": "clock", "title": "Be On Time", "text": "Please come at your reserved time — someone may be booked right after you." },
     { "icon": "doc", "title": "Sign The Waiver", "text": "Everyone signs a pool waiver before their first session. Ask the front desk." }
   ],
   "faq": [

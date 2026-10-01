@@ -55,6 +55,8 @@ export const SERVICES: Service[] = readCollection<ServiceFile>("services").map((
   }),
 );
 
+// TODO: needs bio details from Lindsey (education, interests, one personal line).
+// Her bio is in src/content/data/team/lindsey-hudack.json (JSON can't hold comments).
 export const TEAM: TeamMember[] = readCollection<TeamMember>("team").map((m) =>
   clean({ ...m, education: m.education?.filter(Boolean), certifications: m.certifications?.filter(Boolean) }),
 );

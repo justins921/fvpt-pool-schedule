@@ -6,7 +6,7 @@
   "stepsKicker": "Getting started",
   "stepsTitle": "Your First Visit, Step By Step",
   "steps": [
-    { "icon": "phone", "title": "Call To Schedule", "text": "No referral needed. Our office will try to check your insurance benefits for you." },
+    { "icon": "phone", "title": "Call To Schedule", "text": "No referral needed — our office will check your insurance benefits for you." },
     { "icon": "doc", "title": "Fill Out Your Intake Form", "text": "Download it below and bring it to your first visit, or come a few minutes early." },
     { "icon": "user", "title": "Your Evaluation", "text": "Your therapist reviews your history, tests how you move, and explains what's going on." },
     { "icon": "heart", "title": "Your Treatment Plan", "text": "A plan built for you, with hands-on treatment and a home program to keep you improving." }
@@ -18,7 +18,7 @@
   "evalPoints": [
     "Your history, to understand how and when the problem started",
     "An exam of how you move and how your joints are working",
-    "Measurements like muscle strength tests, neurological screening and pain assessment",
+    "Measurements of muscle strength, nerve function, and pain levels",
     "A clear explanation of what we found and what we recommend, shared with you and your doctor"
   ],
   "evalText": "Wear comfortable clothes you can move in. Sessions run from 30 minutes to two hours, depending on what you need.",
