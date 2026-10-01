@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Fox Valley PT",
   },
   description:
-    "One-on-one physical therapy in Oshkosh, WI since 1990, with the only therapeutic pool in town. No referral needed, and most insurance accepted, including Medicare.",
+    "One-on-one physical therapy in Oshkosh since 1990, with the only therapeutic pool in town. No referral needed, and most insurance accepted.",
   alternates: { canonical: "/" },
   openGraph: { type: "website", siteName: SITE.name, locale: "en_US", url: "/", images: ["/img/exterior.png"] },
   twitter: { card: "summary_large_image", images: ["/img/exterior.png"] },

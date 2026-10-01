@@ -2,7 +2,7 @@ import { RATING, REVIEWS, REVIEWS_URL, REVIEW_COUNT, WRITE_REVIEW_URL, hasReview
 
 function Stars({ n }: { n: number }) {
   return (
-    <span className="stars" aria-label={`${n} out of 5 stars`}>
+    <span className="stars" role="img" aria-label={`${n} out of 5 stars`}>
       {"★★★★★".slice(0, Math.round(n))}
       <span className="off">{"★★★★★".slice(Math.round(n))}</span>
     </span>

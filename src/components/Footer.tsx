@@ -34,13 +34,13 @@ export default function Footer() {
           </nav>
           <p className="areas">Serving {AREAS.map((a) => a.replace(", WI", "")).join(" · ")}</p>
           <p className="legal">
-            © {new Date().getFullYear()} {SITE.name}. All rights reserved. · <Link href="/legal/non-discrimination">Notice of Nondiscrimination</Link> · <Link href="/legal/privacy-policy">Privacy Policy</Link> · Website by Sobojinski Solutions
+            © {new Date().getFullYear()} {SITE.name}. All rights reserved. · <Link href="/legal/non-discrimination">Notice of Nondiscrimination</Link> · <Link href="/legal/privacy-policy">Privacy Policy</Link> · <Link href="/accessibility">Accessibility</Link> · Website by Sobojinski Solutions
           </p>
         </div>
       </footer>
-      <div className="callbar">
+      <nav className="callbar" aria-label="Quick call">
         <a href={SITE.phoneHref} className="btn"><Icon name="phone" /> Call {SITE.phone}</a>
-      </div>
+      </nav>
     </>
   );
 }

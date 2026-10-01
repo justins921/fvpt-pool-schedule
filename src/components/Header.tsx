@@ -11,7 +11,16 @@ import { SITE } from "@/content/site";
 export default function Header() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
-  useEffect(() => setOpen(false), [path]);
+  const [menu, setMenu] = useState<string | null>(null); // which desktop dropdown is open
+  useEffect(() => {
+    setOpen(false);
+    setMenu(null);
+  }, [path]);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenu(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <header className="header">
@@ -26,11 +35,20 @@ export default function Header() {
         <nav className="nav" aria-label="Main">
           {NAV.map((n) =>
             n.children ? (
-              <div className="drop" key={n.label}>
-                <button type="button" aria-haspopup="true">
+              <div
+                className={`drop${menu === n.label ? " open" : ""}`}
+                key={n.label}
+                onBlur={(e) => !e.currentTarget.contains(e.relatedTarget as Node) && setMenu(null)}
+              >
+                <button
+                  type="button"
+                  aria-expanded={menu === n.label}
+                  aria-controls={`menu-${n.label}`}
+                  onClick={() => setMenu(menu === n.label ? null : n.label)}
+                >
                   {n.label} <Icon name="chevron" className="icon-sm" />
                 </button>
-                <div className="drop-menu">
+                <div className="drop-menu" id={`menu-${n.label}`}>
                   {n.children.map((c) => (
                     <Link key={c.href} href={c.href}>
                       {c.label}

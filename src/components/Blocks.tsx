@@ -137,7 +137,7 @@ export function InfoStrip() {
     <section className="info-strip">
       <div className="wrap">
         <div>
-          <h3>Contact Us</h3>
+          <h2>Contact Us</h2>
           <p>
             Ph: <a href={SITE.phoneHref}>{SITE.phone}</a>
             <br />Fax: {SITE.fax}
@@ -145,12 +145,12 @@ export function InfoStrip() {
           </p>
         </div>
         <div>
-          <h3>Our Oshkosh Clinic</h3>
+          <h2>Our Oshkosh Clinic</h2>
           <p>{SITE.address.street},<br />{SITE.address.city}, {SITE.address.state} {SITE.address.zip}</p>
           <a href={SITE.mapsUrl} className="pill-link">Get Directions</a>
         </div>
         <div>
-          <h3>Clinic Hours</h3>
+          <h2>Clinic Hours</h2>
           <HoursTable />
         </div>
       </div>
