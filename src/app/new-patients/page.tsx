@@ -53,7 +53,7 @@ export default function NewPatients() {
             <div className="ico"><Icon name="doc" /></div>
             <div>
               <h3>New Patient Intake Form</h3>
-              <p>Print it, fill it out at home, and bring it to your first appointment.</p>
+              <p>Print it, fill it out at home, and bring it to your first appointment. You can also fill one out at the front desk.</p>
             </div>
             <a href={SITE.intakeForm} className="btn" download>Download PDF</a>
           </div>
