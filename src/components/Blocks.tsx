@@ -1,8 +1,11 @@
 import Link from "next/link";
 import Icon from "./Icon";
 import { SITE } from "@/content/site";
+import { JsonLd, breadcrumbSchema } from "@/content/seo";
 
 type Crumb = { href: string; label: string };
+
+// Breadcrumb schema only on inner pages (the homepage has no PageHead/PhotoHero).
 
 function Crumbs({ crumbs }: { crumbs: Crumb[] }) {
   return (
@@ -21,6 +24,7 @@ export function PageHead({ title, text, crumbs = [] }: { title: string; text?: s
         <h1>{title}</h1>
         {text && <p>{text}</p>}
       </div>
+      <JsonLd data={breadcrumbSchema(crumbs, title)} />
     </section>
   );
 }
@@ -34,6 +38,7 @@ export function PhotoHero({ title, text, image, crumbs = [], children }: { title
         {text && <p>{text}</p>}
         {children}
       </div>
+      <JsonLd data={breadcrumbSchema(crumbs, title)} />
     </section>
   );
 }

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ContactCard, PageHead } from "@/components/Blocks";
 import { formatDate, getPost, getPosts } from "@/content/blog";
+import { JsonLd, articleSchema, pageMeta } from "@/content/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -14,12 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = getPost((await params).slug);
   if (!p) return {};
-  return {
-    title: p.title,
-    description: p.description,
-    alternates: { canonical: `/blog/${p.slug}` },
-    openGraph: { type: "article", publishedTime: p.date, ...(p.image ? { images: [p.image] } : {}) },
-  };
+  return pageMeta({ title: p.title, description: p.description, path: `/blog/${p.slug}`, image: p.image, type: "article" });
 }
 
 export default async function PostPage({ params }: Props) {
@@ -36,6 +32,7 @@ export default async function PostPage({ params }: Props) {
         </article>
       </section>
       <ContactCard />
+      <JsonLd data={articleSchema({ title: p.title, description: p.description, path: `/blog/${p.slug}`, image: p.image, date: p.date })} />
     </>
   );
 }

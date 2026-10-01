@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import { CtaBand, HeroButtons, PhotoHero } from "@/components/Blocks";
 import Headshot from "@/components/Person";
 import { TEAM } from "@/content/team";
+import { JsonLd, ORG_ID } from "@/content/seo";
+import { SITE } from "@/content/site";
 
-export const metadata: Metadata = {
-  title: "Our Team",
+export const metadata: Metadata = pageMeta({
+  title: "Meet Our Physical Therapists",
   description: "Meet the physical therapists, occupational therapist, athletic trainer and staff at Fox Valley Physical Therapy & Wellness Clinic in Oshkosh, WI.",
-  alternates: { canonical: "/team" },
-};
+  path: "/team",
+  image: "/img/staff-group.jpg",
+});
 
 export default function Team() {
   return (
@@ -81,6 +85,26 @@ export default function Team() {
         </div>
       </section>
 
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Fox Valley Physical Therapy staff",
+          itemListElement: TEAM.map((m, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Person",
+              name: m.name,
+              jobTitle: m.role,
+              ...(m.credentials ? { honorificSuffix: m.credentials } : {}),
+              ...(m.photo ? { image: `${SITE.url}${m.photo}` } : {}),
+              url: `${SITE.url}/team#${m.slug}`,
+              worksFor: { "@id": ORG_ID },
+            },
+          })),
+        }}
+      />
       <CtaBand title="Ready To Work With Our Team?" text="Call our Oshkosh clinic to schedule. You don't need a referral, and we accept most insurance, including Medicare." image="/img/exterior.png" />
     </>
   );

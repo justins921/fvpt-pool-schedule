@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import { PageHead } from "@/components/Blocks";
 
-export const metadata: Metadata = { title: "Privacy Policy", alternates: { canonical: "/legal/privacy-policy" } };
+export const metadata: Metadata = pageMeta({ title: "Privacy Policy", description: "How Fox Valley Physical Therapy & Wellness Clinic collects, uses and protects information on its website.", path: "/legal/privacy-policy" });
 
 // Legal text copied verbatim from the previous site. Don't edit without the clinic's sign-off.
 export default function PrivacyPolicy() {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { Checks, CtaBand, Faq, PhotoHero, faqSchema } from "@/components/Blocks";
@@ -6,11 +7,12 @@ import Icon from "@/components/Icon";
 import { FAQ } from "@/content/faq";
 import { SITE } from "@/content/site";
 
-export const metadata: Metadata = {
-  title: "New Patients",
-  description: "What to expect at your first physical therapy visit at Fox Valley Physical Therapy in Oshkosh, WI, plus new patient forms.",
-  alternates: { canonical: "/new-patients" },
-};
+export const metadata: Metadata = pageMeta({
+  title: "New Patient Information",
+  description: "What to expect at your first physical therapy visit at Fox Valley Physical Therapy in Oshkosh, WI. No referral needed. Download the intake form.",
+  path: "/new-patients",
+  image: "/img/patient-treated.jpg",
+});
 
 const STEPS = [
   { icon: "phone", title: "Call To Schedule", text: "No referral needed. Our office will try to check your insurance benefits for you." },

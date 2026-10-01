@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import { PageHead } from "@/components/Blocks";
 
-export const metadata: Metadata = { title: "Notice of Nondiscrimination", alternates: { canonical: "/legal/non-discrimination" } };
+export const metadata: Metadata = pageMeta({ title: "Notice of Nondiscrimination", description: "Fox Valley Physical Therapy complies with federal civil rights laws and provides free language and communication services.", path: "/legal/non-discrimination" });
 
 // Legal text copied verbatim from the previous site. Don't edit without the clinic's sign-off.
 export default function NonDiscrimination() {

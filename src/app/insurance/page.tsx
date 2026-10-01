@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import Image from "next/image";
 import { Checks, CtaBand, Faq, HeroButtons, PhotoHero, faqSchema } from "@/components/Blocks";
 import Icon from "@/components/Icon";
 import { FAQ } from "@/content/faq";
 import { SITE } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Insurance & Billing",
-  description: "Fox Valley Physical Therapy accepts most insurance, including Medicare, Aetna, BCBS, Cigna, Humana, UnitedHealthcare and more, plus worker's comp and auto accident claims.",
-  alternates: { canonical: "/insurance" },
-};
+  description: "Fox Valley Physical Therapy accepts most insurance, including Medicare, Aetna, BCBS, Cigna, Humana and UnitedHealthcare, plus worker's comp and auto accident claims.",
+  path: "/insurance",
+  image: "/img/staff-group.jpg",
+});
 
 const PLANS = [
   ["aetna.png", "Aetna"], ["bcbs.png", "Blue Cross Blue Shield"], ["cigna.png", "Cigna"], ["healthpartners.png", "HealthPartners"],

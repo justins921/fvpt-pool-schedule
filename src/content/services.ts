@@ -1,6 +1,7 @@
 export type Service = {
   slug: string;
   name: string;
+  seoTitle?: string; // shorter name for the page title when the full name is long
   short: string; // one line for cards
   metaDescription: string;
   image: string;
@@ -148,6 +149,7 @@ export const SERVICES: Service[] = [
   {
     slug: "sports-medicine",
     name: "Sports Medicine & Athletic Training",
+    seoTitle: "Sports Medicine",
     short: "Get athletes back on the field, with certified athletic trainers.",
     metaDescription: "Sports medicine and athletic training in Oshkosh, WI. Evaluation and rehab of athletic injuries, sport-specific conditioning, and certified athletic trainers.",
     image: "/img/patient-treated.jpg",

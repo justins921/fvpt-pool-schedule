@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import { ContactCard, HeroButtons, InfoStrip, PhotoHero } from "@/components/Blocks";
 import Icon from "@/components/Icon";
 import { SITE } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Contact & Directions",
-  description: "Call Fox Valley Physical Therapy at (920) 235-8966. 909 S Washburn Street, Oshkosh, WI 54904. Hours, directions and fax.",
-  alternates: { canonical: "/contact" },
-};
+  description: "Call Fox Valley Physical Therapy at (920) 235-8966. 909 S Washburn Street, Oshkosh, WI 54904. Clinic hours, directions, fax and email.",
+  path: "/contact",
+  image: "/img/exterior.png",
+});
 
 const WAYS = [
   { icon: "phone", title: "Call Us", body: <><a href={SITE.phoneHref}>{SITE.phone}</a><br />The fastest way to schedule or ask a question.</> },

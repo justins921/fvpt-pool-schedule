@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactCard, PageHead } from "@/components/Blocks";
 import { SERVICES } from "@/content/services";
 
-export const metadata: Metadata = {
-  title: "Services",
-  description: "Physical therapy, occupational and hand therapy, aquatic therapy, dry needling, sports medicine, vertigo treatment, pediatrics and more in Oshkosh, WI.",
-  alternates: { canonical: "/services" },
-};
+export const metadata: Metadata = pageMeta({
+  title: "Physical Therapy Services in Oshkosh, WI",
+  description: "Physical, occupational, hand and aquatic therapy, dry needling, sports medicine, vertigo care and more at Fox Valley Physical Therapy in Oshkosh, WI.",
+  path: "/services",
+  image: "/img/therapy-1.jpg",
+});
 
 export default function Services() {
   return (

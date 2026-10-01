@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { Checks, CtaBand, Faq, PhonePill, PhotoHero, faqSchema } from "@/components/Blocks";
 import Icon from "@/components/Icon";
 import { POOL, SITE } from "@/content/site";
 
-export const metadata: Metadata = {
-  title: "Pool Access for Patients",
-  description: "Current and former Fox Valley Physical Therapy patients can reserve the only therapeutic pool in Oshkosh for independent exercise.",
-  alternates: { canonical: "/pool" },
-};
+export const metadata: Metadata = pageMeta({
+  title: "Therapeutic Pool Access in Oshkosh",
+  description: "Current and former Fox Valley Physical Therapy patients can reserve the only therapeutic pool in Oshkosh for independent exercise. $35 a month for 2 visits a week.",
+  path: "/pool",
+  image: "/img/pool.jpg",
+});
 
 const TIPS = [
   { icon: "water", title: "What To Bring", text: "Your swimsuit and a towel." },

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactCard, HeroButtons, PhotoHero } from "@/components/Blocks";
 import { formatDate, getPosts } from "@/content/blog";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Tips and guides from the physical therapists at Fox Valley Physical Therapy in Oshkosh, WI.",
-  alternates: { canonical: "/blog" },
-};
+export const metadata: Metadata = pageMeta({
+  title: "Physical Therapy Blog",
+  description: "Guides and tips from the physical therapists at Fox Valley Physical Therapy in Oshkosh, WI on recovery, pain relief and staying active.",
+  path: "/blog",
+  image: "/img/therapy-1.jpg",
+});
 
 export default function Blog() {
   return (

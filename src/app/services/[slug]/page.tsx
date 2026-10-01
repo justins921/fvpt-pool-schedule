@@ -6,6 +6,7 @@ import { Checks, CtaBand, Faq, PhotoHero, faqSchema } from "@/components/Blocks"
 import { FAQ } from "@/content/faq";
 import { SERVICES, serviceBySlug } from "@/content/services";
 import { SITE } from "@/content/site";
+import { JsonLd, pageMeta, serviceSchema } from "@/content/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -17,7 +18,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const s = serviceBySlug((await params).slug);
   if (!s) return {};
-  return { title: `${s.name} in Oshkosh, WI`, description: s.metaDescription, alternates: { canonical: `/services/${s.slug}` } };
+  return pageMeta({ title: `${s.seoTitle ?? s.name} in Oshkosh, WI`, description: s.metaDescription, path: `/services/${s.slug}`, image: s.image });
 }
 
 // General questions every service page answers, taken from the site-wide FAQ.
@@ -85,7 +86,8 @@ export default async function ServicePage({ params }: Props) {
       </section>
 
       <CtaBand title={`Interested In ${s.name}?`} text="Call our Oshkosh clinic to schedule. You don't need a referral, and we accept most insurance, including Medicare." image={s.image} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faq)) }} />
+      <JsonLd data={faqSchema(faq)} />
+      <JsonLd data={serviceSchema({ name: s.name, description: s.metaDescription, path: `/services/${s.slug}`, image: s.image })} />
     </>
   );
 }
