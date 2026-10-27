@@ -1,7 +1,7 @@
 {
   "name": "TMJ Treatment",
   "order": 8,
-  "short": "Relief for jaw pain, clicking and limited opening.",
+  "short": "Relief for jaw pain, clicking and limited opening of your jaw.",
   "metaDescription": "TMJ treatment in Oshkosh, WI. Physical therapy for jaw pain, clicking and popping, and limited jaw movement.",
   "image": "/img/services/tmj/image.jpg",
   "intro": "TMJ dysfunction can cause jaw pain, clicking or popping, headaches and trouble chewing. Physical therapy is often very effective, and we work with your dentist on a plan that fits you.",
@@ -17,9 +17,11 @@
     },
     {
       "heading": "How we treat",
-      "body": "Hands-on therapy, trigger point work, targeted exercises, and coaching on habits like clenching and grinding. Dr. Stephanie Meyer, DPT, has specific experience treating TMJ dysfunction."
+      "body": "Hands-on therapy, trigger point work, targeted exercises, and coaching on habits like clenching and grinding. Dr. Stephanie Meyer, DPT, has specific experience treating TMJ dysfunction.",
+      "list": []
     }
   ],
+  "faq": [],
   "related": [
     "dry-needling",
     "physical-therapy"
