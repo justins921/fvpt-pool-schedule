@@ -5,18 +5,19 @@
   "short": "Get athletes back on the field, with certified athletic trainers.",
   "metaDescription": "Sports medicine and athletic training in Oshkosh, WI. Evaluation and rehab of athletic injuries, sport-specific conditioning, and certified athletic trainers.",
   "image": "/img/services/sports-medicine/image.jpg",
-  "intro": "Our licensed athletic trainer and therapists treat athletes of every level, from youth sports to pros. We treat the injury and then get you ready for the demands of your sport.",
+  "intro": "Our licensed athletic trainer and therapists treat athletes of every level, from youth sports to professional athletes. We treat the injury and then get you ready for the demands of your sport.",
   "sections": [
     {
-      "heading": "What we do",
+      "heading": "Services Provided",
       "list": [
-        "Diagnosis and treatment of athletic injuries — especially knees and ankles",
-        "Shoulder and throwing injury rehab",
+        "Diagnosis and treatment of athletic injuries — specializing in knees and ankles",
+        "Shoulder and throwing injury rehabiltation",
         "Sport-specific conditioning and personal training",
-        "Athletic training services for local schools, including on-call help when an injury happens"
+        "Athletic training outreach services for local schools, including on-call urgency assessments and care if and when an injury happens"
       ]
     }
   ],
+  "faq": [],
   "related": [
     "physical-therapy",
     "occupational-hand-therapy"
