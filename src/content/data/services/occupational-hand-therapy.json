@@ -11,15 +11,17 @@
       "list": [
         "Shoulder injuries, including throwing injuries",
         "Elbow, wrist and hand injuries",
-        "Recovery after hand, wrist, elbow, or shoulder surgery",
-        "Wound care for hand and arm injuries"
+        "Post operative hand, wrist, elbow, or shoulder",
+        "Wound care for hand and arm crush injuries"
       ]
     },
     {
       "heading": "Splints and braces",
-      "body": "We make custom splints and fit braces right here in the clinic."
+      "body": "We make custom splints, and fit braces right here in the clinic",
+      "list": []
     }
   ],
+  "faq": [],
   "related": [
     "physical-therapy",
     "work-injuries",
