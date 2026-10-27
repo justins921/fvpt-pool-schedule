@@ -6,10 +6,26 @@
   "stepsKicker": "Getting started",
   "stepsTitle": "Your First Visit, Step By Step",
   "steps": [
-    { "icon": "phone", "title": "Call To Schedule", "text": "No referral needed — our office will check your insurance benefits for you." },
-    { "icon": "doc", "title": "Fill Out Your Intake Form", "text": "Download it below and bring it to your first visit, or come a few minutes early." },
-    { "icon": "user", "title": "Your Evaluation", "text": "Your therapist reviews your history, tests how you move, and explains what's going on." },
-    { "icon": "heart", "title": "Your Treatment Plan", "text": "A plan built for you, with hands-on treatment and a home program to keep you improving." }
+    {
+      "icon": "phone",
+      "title": "Call To Schedule",
+      "text": "No referral needed — our office will check your insurance benefits for you."
+    },
+    {
+      "icon": "doc",
+      "title": "Fill Out Your Intake Form",
+      "text": "Download it below and bring it to your first visit, or come a few minutes early."
+    },
+    {
+      "icon": "user",
+      "title": "Your Evaluation",
+      "text": "Your therapist reviews your history, assesses your pain, motion, strength and includes specialized testing."
+    },
+    {
+      "icon": "heart",
+      "title": "Your Treatment Plan",
+      "text": "A plan built for you, with hands-on treatment and a home program to keep you improving."
+    }
   ],
   "formTitle": "New Patient Intake Form",
   "formText": "Print it, fill it out at home, and bring it to your first appointment. You can also fill one out at the front desk.",
@@ -17,7 +33,7 @@
   "evalTitle": "What Your Evaluation Covers",
   "evalPoints": [
     "Your history, to understand how and when the problem started",
-    "An exam of how you move and how your joints are working",
+    "An exam of how your body moves",
     "Measurements of muscle strength, nerve function, and pain levels",
     "A clear explanation of what we found and what we recommend, shared with you and your doctor"
   ],
