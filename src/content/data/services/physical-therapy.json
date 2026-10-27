@@ -15,15 +15,16 @@
         "Plantar fasciitis",
         "Headaches",
         "Rehab after surgery and joint replacement",
-        "SI joint pain and mid-back problems",
         "Scoliosis",
         "Arthritis and fibromyalgia",
-        "Balance problems and neurological conditions"
+        "Balance problems",
+        "Neurological Conditions"
       ]
     },
     {
       "heading": "Your evaluation",
-      "body": "Your first visit starts with a full evaluation. We'll go over your history, test how you move, measure strength and joint function, and then explain what we found and what we recommend, to you and to your doctor."
+      "body": "Your first visit starts with a full evaluation. We'll go over your history, test how you move, measure strength and joint function, and then explain what we found and what we recommend, to you and to your doctor.",
+      "list": []
     },
     {
       "heading": "How we treat",
@@ -40,9 +41,11 @@
     },
     {
       "heading": "How long visits take",
-      "body": "Treatment sessions run from 30 minutes to two hours, depending on what you need."
+      "body": "Treatment sessions run from 30 minutes to two hours, depending on what you need.",
+      "list": []
     }
   ],
+  "faq": [],
   "related": [
     "aquatic-therapy",
     "dry-needling",
