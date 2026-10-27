@@ -2,21 +2,42 @@
   "seoTitle": "Physical Therapy in Oshkosh, WI | Fox Valley Physical Therapy",
   "seoDescription": "One-on-one physical therapy in Oshkosh since 1990, with the only therapeutic pool in town. No referral needed, and most insurance accepted.",
   "heroKicker": "Physical therapy in Oshkosh, WI",
-  "heroTitle": "Your Therapist. One-On-One. Every Visit.",
-  "heroText": "Locally owned since 1990, with the only therapeutic pool in Oshkosh. No referral needed, and we take most insurance, including Medicare.",
+  "heroTitle": "FEEL BETTER. LIVE BETTER.",
+  "heroText": "Physical Therapy with same-day appointments available. We accept HSA, FSA, and most insurance, and private-pay bundles are available too.",
   "heroCaptionName": "Steve & Regina Sobojinski",
   "heroCaptionText": "Founders, treating patients since 1990",
   "servicesKicker": "One-on-one physical therapy",
   "servicesTitle": "Oshkosh Physical Therapy Services",
   "approachTitle": "A Better Approach To Physical Therapy",
-  "approachText": "Fox Valley Physical Therapy & Wellness Clinic started in a 500 square foot office in 1990. Today it's a 7,500 square foot clinic with a therapeutic pool and a fully equipped gym, and a team with more than 100 years of combined experience. What hasn't changed is how we treat people.",
+  "approachText": "Fox Valley Physical Therapy & Wellness Clinic was started by Steve and Regina Sobojinski in a 500-square-foot office in 1990. Today it's a 7,500 square foot clinic with the only therapeutic pool in the area, a fully equipped gym, and a team with more than 100 years of combined experience. We have been recognized as the best physical therapy clinic in Winnebago County.",
   "approachCaptionName": "Steve Sobojinski, OTR, CSCS",
   "approachCaptionText": "\"I treat their injuries as if they were my injuries.\"",
   "benefits": [
-    { "icon": "user", "title": "One-On-One, Every Visit", "text": "At every appointment you get hands-on, one-on-one attention from your therapist." },
-    { "icon": "clipboard", "title": "No Referral Needed", "text": "Call and schedule directly — we'll check your insurance benefits for you." },
-    { "icon": "water", "title": "The Only Therapeutic Pool In Oshkosh", "text": "Aquatic therapy for arthritis, joint replacements, balance and pain, right here in the clinic." },
-    { "icon": "talk", "title": "We Talk To Your Doctor", "text": "We keep your physician in the loop and call them if your plan needs to change." }
+    {
+      "icon": "user",
+      "title": "A Plan Built Around You",
+      "text": "Your therapist builds your treatment plan around your goals and adjusts it as you progress, so every visit is spent on what helps you most."
+    },
+    {
+      "icon": "clipboard",
+      "title": "Call and Schedule Directly",
+      "text": "Call to schedule, no referral needed. Our front office assists with all insurance questions and maximizes your benefits."
+    },
+    {
+      "icon": "water",
+      "title": "The Only Therapeutic Pool In Oshkosh",
+      "text": "Aquatic therapy for arthritis, joint replacements, balance and pain, right here in the clinic."
+    },
+    {
+      "icon": "talk",
+      "title": "We Talk To Your Doctor",
+      "text": "We keep your referring provider in the loop on your progress, and we call them directly if your plan needs to change."
+    },
+    {
+      "icon": "calendar",
+      "title": "Same Day Services Available",
+      "text": "No two week or longer wait."
+    }
   ],
   "teamKicker": "Our therapists",
   "teamTitle": "Get To Know Our Team",
