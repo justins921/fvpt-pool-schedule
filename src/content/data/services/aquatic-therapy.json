@@ -7,23 +7,25 @@
   "intro": "We're the only clinic in Oshkosh with a therapeutic pool. Water takes weight off healing joints, so you can start moving and strengthening sooner and with less pain than you could on land.",
   "sections": [
     {
-      "heading": "Why the water helps",
+      "heading": "Aquatic Therapy Benefits",
       "list": [
-        "Buoyancy takes pressure off your joints while you exercise",
-        "Less muscle tightness and spasm",
-        "Eases the effects of arthritis",
-        "Better circulation",
-        "Less joint pain and inflammation",
-        "Better balance, walking, coordination and flexibility"
+        "Water therapy provides buoyancy which takes the stress off of your joints while you exercise",
+        "Decreases muscle tightness and muscle spasms",
+        "Modulates pain and eases the effects of arthritis",
+        "Improves blood circulation",
+        "Minimizes joint pain and inflammation to allow for better range of motion and overall function",
+        "Improves balance, walking, coordination and flexibility"
       ]
     },
     {
-      "heading": "Who it's good for",
-      "body": "Aquatic therapy works well after joint replacement or a fracture, for arthritis, chronic back pain and fibromyalgia, and for balance and walking problems. Warm water and gentle resistance let you build strength without overloading areas that are still healing."
+      "heading": "Patients that could benefit",
+      "body": "Aquatic therapy works well post operative joint replacement, healing fractures, arthritic conditions, chronic back pain, fibromyalgia, and for poor balance and walking problems. Aquatic therapy is great for light resistance exercises that allows you to build strength without overloading areas that are still healing.",
+      "list": []
     },
     {
-      "heading": "Pool time on your own",
-      "body": "Current and former patients can also book the pool for independent exercise. See the Pool page for how it works."
+      "heading": "Privately scheduled pool sessions",
+      "body": "Current and former patients can reserve the pool for to continue their aquatic therapeutic exercise programs.",
+      "list": []
     }
   ],
   "faq": [
